@@ -58,14 +58,42 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun lwg-evil-paste-from-0 ()
+  (interactive)
+  (let ((evil-this-register ?0))
+    (call-interactively 'evil-visual-paste)))
+
+(defun lwg-evil-copy-to-0 ()
+  (interactive)
+  (let ((evil-this-register ?0))
+    (call-interactively 'evil-yank)))
+
+(defun lwg-copy-to-register-0 ()
+  "copy current line or text selection to register 0"
+  (interactive)
+  (let ($p1 $p2)
+    (if (region-active-p)
+        (progn (setq $p1 (region-beginning))
+               (setq $p2 (region-end)))
+      (progn (setq $p1 (line-beginning-position))
+             (setq $p2 (line-end-position))))
+    (copy-to-register ?0 $p1 $p2)
+    (message "copied to register 0: %s" (buffer-substring-no-properties $p1 $p2))))
+
+(defun lwg-paste-from-register-0 ()
+  "paste text from register 0"
+  (interactive)
+  (when (use-region-p)
+    (delete-region (region-beginning) (region-end)))
+  (insert-register ?0 t))
+
 (with-eval-after-load 'evil
   (define-key evil-insert-state-map (kbd "C-h") 'backward-char)
   (define-key evil-insert-state-map (kbd "C-j") 'next-line)
   (define-key evil-insert-state-map (kbd "C-k") 'previous-line)
   (define-key evil-insert-state-map (kbd "C-l") 'forward-char)
-  ;; c-y and c-p in different window not work, must be in same window
-;;  (define-key evil-insert-state-map (kbd "C-y") 'evil-yank)
-  (define-key evil-insert-state-map (kbd "C-p") 'evil-paste-after)
+  (define-key evil-insert-state-map (kbd "C-y") 'lwg-copy-to-register-0)
+  (define-key evil-insert-state-map (kbd "C-p") 'lwg-paste-from-register-0)
   )
 ;; (define-key evil-normal-state-map (kbd "<C-tab>") 'buffer-switch)
 ;; ;; keymap used in the popup menu
