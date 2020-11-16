@@ -63,6 +63,8 @@ Each entry is either:
   (define-key evil-insert-state-map (kbd "C-j") 'next-line)
   (define-key evil-insert-state-map (kbd "C-k") 'previous-line)
   (define-key evil-insert-state-map (kbd "C-l") 'forward-char)
+;;  (define-key evil-insert-state-map (kbd "C-y") 'evil-yank)
+  (define-key evil-insert-state-map (kbd "C-p") 'evil-paste-after)
   )
 ;; (define-key evil-normal-state-map (kbd "<C-tab>") 'buffer-switch)
 ;; ;; keymap used in the popup menu
