@@ -320,6 +320,7 @@ you should place your code here."
   (add-to-list 'exec-path "d:/software/msys2/mingw64/bin")
   (setq ispell-program-name "aspell")
   (setq ispell-personal-dictionary "d:/software/msys2/mingw64/lib/aspell-0.60/en_GB")
+  ;; setting c code tab in 4 space
   (setq c-basic-offset 4)
   (define-coding-system-alias 'UTF-8 'utf-8)
   (set-face-attribute 'default nil :font "Courier New")

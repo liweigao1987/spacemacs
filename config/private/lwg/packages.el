@@ -63,6 +63,7 @@ Each entry is either:
   (define-key evil-insert-state-map (kbd "C-j") 'next-line)
   (define-key evil-insert-state-map (kbd "C-k") 'previous-line)
   (define-key evil-insert-state-map (kbd "C-l") 'forward-char)
+  ;; c-y and c-p in different window not work, must be in same window
 ;;  (define-key evil-insert-state-map (kbd "C-y") 'evil-yank)
   (define-key evil-insert-state-map (kbd "C-p") 'evil-paste-after)
   )
