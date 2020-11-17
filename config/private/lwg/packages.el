@@ -78,7 +78,7 @@ Each entry is either:
       (progn (setq $p1 (line-beginning-position))
              (setq $p2 (line-end-position))))
     (copy-to-register ?0 $p1 $p2)
-    (message "copied to register 0: %s" (buffer-substring-no-properties $p1 $p2))))
+    ))
 
 (defun lwg-paste-from-register-0 ()
   "paste text from register 0"
@@ -95,6 +95,20 @@ Each entry is either:
   (define-key evil-insert-state-map (kbd "C-y") 'lwg-copy-to-register-0)
   (define-key evil-insert-state-map (kbd "C-p") 'lwg-paste-from-register-0)
   )
+
+(global-set-key (kbd "<backtab>") 'evil-shift-left)
+(defun un-indent-by-removing-4-spaces ()
+  "remove 4 spaces from beginning of of line"
+  (interactive)
+  (save-excursion
+    (save-match-data
+      (beginning-of-line)
+      ;; get rid of tabs at beginning of line
+      (when (looking-at "^\\s-+")
+        (untabify (match-beginning 0) (match-end 0)))
+      (when (looking-at (concat "^" (make-string tab-width ?\ )))
+        (replace-match "")))))
+
 ;; (define-key evil-normal-state-map (kbd "<C-tab>") 'buffer-switch)
 ;; ;; keymap used in the popup menu
 ;; (setq switch-keymap (make-sparse-keymap))
