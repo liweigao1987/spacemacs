@@ -42,7 +42,8 @@ values."
      ;; better-defaults
      emacs-lisp
      ;; git
-     (c-c++ :variables c-c++-enable-clang-support t)
+     (c-c++ :variables
+            c-c++-enable-clang-support t)
      gtags
      markdown
      org
