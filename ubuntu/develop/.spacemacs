@@ -68,7 +68,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(easy-kill)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -165,7 +165,7 @@ It should only modify the values of Spacemacs settings."
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
-   dotspacemacs-editing-style 'vim
+   dotspacemacs-editing-style 'emacs
 
    ;; If non-nil show the version string in the Spacemacs buffer. It will
    ;; appear as (spacemacs version)@(emacs version)
@@ -519,6 +519,14 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq c-basic-offset 4)
   (define-coding-system-alias 'UTF-8 'utf-8)
+  (setq projectile-enable-caching t)
+  (global-set-key (kbd "<backtab>") 'evil-shift-left)
+  (spacemacs/set-leader-keys "d f" 'find-name-dired)
+  (spacemacs/set-leader-keys "j m" 'evil-jump-item)
+  (global-set-key [remap kill-ring-save] 'easy-kill)
+  (global-set-key [remap mark-sexp] 'easy-mark)
+  ;;(setq vc-handled-backends ())
+  ;;(setq inhibit-compacting-font-caches t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

@@ -96,7 +96,6 @@ Each entry is either:
   (define-key evil-insert-state-map (kbd "C-p") 'lwg-paste-from-register-0)
   )
 
-(global-set-key (kbd "<backtab>") 'evil-shift-left)
 (defun un-indent-by-removing-4-spaces ()
   "remove 4 spaces from beginning of of line"
   (interactive)

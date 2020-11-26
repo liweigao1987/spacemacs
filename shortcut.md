@@ -1,6 +1,15 @@
 #shortcut for spacemacs
 
-| 按键                       | 描述                                    |
+| emacs按键     | 描述                     |
+|:--------------|:-------------------------|
+| leader t E e  | 在holy和evil模式之间切换 |
+| C-\           | 切换输入法               |
+| C-S-backspace | 删除整行                 |
+| C-M-a         | 跳到函数开头             |
+| C-M-e         | 跳到函数结尾             |
+|               |                    |
+
+| evil按键                   | 描述                                    |
 |:---------------------------|:----------------------------------------|
 | C-[                        | evil退出编辑模式                        |
 | spc w M window左上角的字母 | 切换窗口                                |
@@ -13,8 +22,8 @@
 | m-m k p                    | 粘贴                                    |
 | m-backspace                | 向前删除                                |
 | tab                        | markdown模式自动对齐                    |
-| C-M-a  / {                 | 上移到函数头部                          |
-| C-M-e  / }                 | 下移到函数尾部                          |
+| {                          | 上移到函数头部                          |
+| }                          | 下移到函数尾部                          |
 | C-@                        | 设置mark标记，可以%跳转或者移动光标多选 |
 | spc m g g                  | 跳转到符号定义                          |
 | spc m g r                  | 搜索该符号的引用                        |
@@ -29,10 +38,27 @@
 
 | holy按键      | 描述       |
 |:--------------|:-----------|
-| C-\           | 切换输入法 |
-| C-S-backspace | 删除整行   |
 | M-<           | 跳到顶部   |
 | M->           | 跳到底部   |
 | M-{           | 跳到段顶部 |
 | M-}           | 跳到段底部 |
 |               |       |
+
+easy-kill:
+    M-w  : save region/url/email/line
+    M-w w: save word at point
+    M-w s: save sexp at point
+    M-w l: save list at point (enclosing sexp)
+    M-w d: save defun at point
+    M-w D: save current defun name
+    M-w f: save file at point
+    M-w b: save buffer-file-name or default-directory. - changes the kill to the directory name, + to full name and 0 to basename.
+    @: append selection to previous kill and exit. For example, M-w d @ will append current function to last kill.
+    C-w: kill selection and exit
+    +, - and 1..9: expand/shrink selection
+    0 shrink the selection to the initial size i.e. before any expansion
+    SPC: cycle through things in easy-kill-alist
+    C-SPC: turn selection into an active region
+    C-g: abort
+    ?: help
+
