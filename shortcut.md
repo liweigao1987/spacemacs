@@ -1,19 +1,20 @@
 #shortcut for spacemacs
 
-| emacs按键     | 描述                              |
-|:--------------|:----------------------------------|
-| leader t E e  | 在holy和evil模式之间切换          |
-| C-\           | 切换输入法                        |
-| C-S-backspace | 删除整行                          |
-| C-M-a         | 跳到函数开头                      |
-| C-M-e         | 跳到函数结尾                      |
-| C-insert      | 拷贝                              |
-| S-insert      | 粘贴                              |
-| M-w ?         | easy-kill帮助                     |
-| 0w            | dired模式: 拷贝指定文件的绝对路径 |
-| leader f y y  | 拷贝当前目录绝对路径              |
-| leader f y n  | 拷贝当前buffer的文件名            |
-|               |                           |
+| emacs按键     | 描述                                   |
+|:--------------|:---------------------------------------|
+| leader t E e  | 在holy和evil模式之间切换               |
+| C-\           | 切换输入法                             |
+| C-S-backspace | 删除整行                               |
+| C-M-a         | 跳到函数开头                           |
+| C-M-e         | 跳到函数结尾                           |
+| C-insert      | 拷贝                                   |
+| S-insert      | 粘贴                                   |
+| M-w ?         | easy-kill帮助                          |
+| 0w            | dired模式: 拷贝指定文件的绝对路径      |
+| leader f y y  | 拷贝当前目录绝对路径                   |
+| leader f y n  | 拷贝当前buffer的文件名                 |
+| C-c C-w f     | treemacs window, set default workspace |
+|               |                                        |
 
 | evil按键                   | 描述                                    |
 |:---------------------------|:----------------------------------------|
