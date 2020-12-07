@@ -34,9 +34,11 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layers
    '(python
      lwg
+     java
      (c-c++ :variables
             c-c++-enable-clang-support t)
      gtags
+     common-lisp
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -525,6 +527,8 @@ before packages are loaded."
   (spacemacs/set-leader-keys "j m" 'evil-jump-item)
   (global-set-key [remap kill-ring-save] 'easy-kill)
   (global-set-key [remap mark-sexp] 'easy-mark)
+  (global-set-key (kbd "M-g j") 'evil-jump-forward)
+  (global-set-key (kbd "M-g k") 'evil-jump-backward)
   ;;(setq vc-handled-backends ())
   ;;(setq inhibit-compacting-font-caches t)
   )
