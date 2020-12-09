@@ -17,7 +17,8 @@
 | C-c C-w f     | treemacs window, set default workspace |
 | leader i k    | 下方插入空行                           |
 | leader i j    | 上方插入空行                           |
-|               |                                  |
+| leader j c    | 跳转到最近改动的位置                   |
+|               |                              |
 
 | evil按键                   | 描述                                    |
 |:---------------------------|:----------------------------------------|

@@ -529,6 +529,7 @@ before packages are loaded."
   (global-set-key [remap mark-sexp] 'easy-mark)
   (global-set-key (kbd "M-n") 'evil-jump-forward)
   (global-set-key (kbd "M-p") 'evil-jump-backward)
+  (blink-cursor-mode)
   ;;(setq vc-handled-backends ())
   ;;(setq inhibit-compacting-font-caches t)
   )
