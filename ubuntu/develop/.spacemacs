@@ -70,7 +70,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(easy-kill)
+   dotspacemacs-additional-packages '(easy-kill android-mode android-env)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -530,6 +530,8 @@ before packages are loaded."
   (global-set-key (kbd "M-n") 'evil-jump-forward)
   (global-set-key (kbd "M-p") 'evil-jump-backward)
   (blink-cursor-mode)
+  (require 'android-mode)
+  (setq android-mode-sdk-dir "/home/liweigao/software/android/sdk")
   ;;(setq vc-handled-backends ())
   ;;(setq inhibit-compacting-font-caches t)
   )
