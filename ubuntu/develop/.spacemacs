@@ -36,7 +36,9 @@ This function should only modify configuration layer settings."
      lwg
      (java :variables java-backend 'meghanada)
      (c-c++ :variables
-            c-c++-enable-clang-support t)
+            c-c++-enable-clang-support t
+            c-c++-backend 'lsp-ccls
+            c-c++-lsp-enable-semantic-highlight 'rainbow)
      gtags
      common-lisp
      ;; ----------------------------------------------------------------
@@ -532,6 +534,7 @@ before packages are loaded."
   (blink-cursor-mode)
   (require 'android-mode)
   (setq android-mode-sdk-dir "/home/liweigao/software/android/sdk/")
+  (setq lsp-enable-file-watchers nil)
   ;;(setq lsp-java-server-install-dir "/home/liweigao/.emacs.d/private/jdt/jdt-language-server-0.66.0-202012030122/")
   ;;(setq vc-handled-backends ())
   ;;(setq inhibit-compacting-font-caches t)
