@@ -31,6 +31,37 @@
 | leader s P F3 | 把搜索结果保存到buffer里面，可以C-o逐个打开，类似occur,该action适用于所有搜索结果 |
 |               |                                                                                   |
 
+| mark-ring   | 描述                                                                       |
+| :---        | :---                                                                       |
+| leader r m  | 显示所有的mark ring条目（global和buffer）                                  |
+| C-spc       | 设置mark并激活，意味着移动光标会高亮选择区域，进入global和buffer rings     |
+| C-spc C-spc | 设置mark不激活，意味着不高亮选择区域，压入global和buffer rings，形成回溯栈 |
+| C-x C-x     | 在激活的mark也就是高亮区域的头尾跳转                                       |
+| C-u C-spc   | 在buffer内的ring里面循环回溯                                               |
+| C-x C-spc   | 在global内的ring里面循环回溯，每个文件只保留一个最后设置的mark供回溯       |
+|             |                                                                            |
+
+| register         | 描述                                     |
+| :---             | :---                                     |
+| leader r r       | 显示所有的寄存器条目                     |
+| C-x r spc 单字符 | 把当前位置压入《单字符》指定的寄存器     |
+| C-x r j 单字符   | 跳转到《单字符》指定的寄存器的位置       |
+| C-x r s 单字符   | 把mark的文本拷贝到《单字符》指定的寄存器 |
+| C-x r i 单字符   | 把《单字符》寄存器的内容复制到光标位置   |
+| C-x r + mark     | 把mark的文本追加的文本寄存器里面         |
+|                  |                            |
+
+| bookmark       | 描述 |
+| :---           | :--- |
+| C-x r m 字符串 | 设置bookmark,bookmark是持久化存储的     |
+
+| kill-ring | 描述                                                                                    |
+| :---      | :---                                                                                    |
+| C-u 0 C-k | 删除该行光标前的部分                                                                    |
+| C-k       | 删除该行光标后的部分                                                                    |
+| C-d       | 删除字符，不进入ring. delete的一般是小范围的，不进入ring;kill的一般是大范围的，进入ring |
+|           |                                                          |
+
 | 移动按键 | 描述                                 |
 |:---------|:-------------------------------------|
 | M-<      | 跳到顶部                             |
