@@ -58,6 +58,21 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
+(defun pop-local-or-global-mark ()
+  "Pop to local mark if it exists or to the global mark if it does not."
+  (interactive)
+  (if (mark t)
+      (if (= (point) (mark t))
+          (progn
+            (message "--->switch global")
+            (pop-global-mark))
+        (progn
+          (message "---> pop local")
+          (pop-to-mark-command)))
+    (progn
+      (message "---> pop global")
+      (pop-global-mark))))
+
 (defun lwg-evil-paste-from-0 ()
   (interactive)
   (let ((evil-this-register ?0))
