@@ -30,7 +30,7 @@
 ;;; Code:
 
 (defconst lwg-packages
-  '()
+  '(lsp-ui)
   "The list of Lisp packages required by the lwg layer.
 
 Each entry is either:
@@ -57,6 +57,13 @@ Each entry is either:
 
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+(defun lwg/post-init-lsp-ui ()
+  (use-package lsp-ui
+    :defer t
+    :config
+    (setq lsp-ui-imenu-window-width 20)
+    (setq lsp-ui-imenu-auto-refresh t)))
 
 (defun pop-local-or-global-mark ()
   "Pop to local mark if it exists or to the global mark if it does not."
