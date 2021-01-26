@@ -12,6 +12,7 @@
 | M-w ?         | easy-kill帮助                                                                     |
 | leader f y y  | 拷贝当前目录绝对路径                                                              |
 | leader f y n  | 拷贝当前buffer的文件名                                                            |
+| leader f y D  | 拷贝相对工程根目录的路径                                                          |
 | C-x d         | 进入dired模式,可创建目录等操作                                                    |
 | C-c C-w f     | treemacs window, set default workspace                                            |
 | leader i k    | 下方插入空行                                                                      |
@@ -31,7 +32,8 @@
 | leader s P F3 | 把搜索结果保存到buffer里面，可以C-o逐个打开，类似occur,该action适用于所有搜索结果 |
 | M-.           | 查找定义                                                                          |
 | M-?           | 查找引用                                                                          |
-| M-y           | 列出kill-ring内容, n/p 切换条目                                                                                  |
+| M-y           | 列出kill-ring内容, n/p 切换条目                                                   |
+| C-x z         | 重复前一条命令，之后可以只按z，不断重复                                                                                  |
 
 | mark-ring   | 描述                                                                       |
 | :---        | :---                                                                       |
