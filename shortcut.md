@@ -29,7 +29,9 @@
 | leader m g g  | 跳转到符号定义                                                                    |
 | leader m g r  | 搜索该符号的引用                                                                  |
 | leader s P F3 | 把搜索结果保存到buffer里面，可以C-o逐个打开，类似occur,该action适用于所有搜索结果 |
-|               |                                                                                   |
+| M-.           | 查找定义                                                                          |
+| M-?           | 查找引用                                                                          |
+| M-y           | 列出kill-ring内容, n/p 切换条目                                                                                  |
 
 | mark-ring   | 描述                                                                       |
 | :---        | :---                                                                       |
