@@ -38,8 +38,8 @@ This function should only modify configuration layer settings."
      (java :variables java-backend 'meghanada)
      (c-c++ :variables
             c-c++-enable-clang-support t
-            c-c++-backend 'lsp-ccls
-            c-c++-lsp-enable-semantic-highlight 'rainbow)
+            ;;c-c++-lsp-enable-semantic-highlight 'rainbow
+            c-c++-backend 'lsp-ccls)
      gtags
      common-lisp
      ;; ----------------------------------------------------------------
