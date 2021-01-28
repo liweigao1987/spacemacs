@@ -540,6 +540,8 @@ before packages are loaded."
   ;;(require 'android-mode)
   ;;(setq android-mode-sdk-dir "/home/liweigao/software/android/sdk/")
   (setq lsp-enable-file-watchers nil)
+  (load-file "/home/liweigao/.emacs.d/private/local/lwg-mode.el")
+  ;;(add-hook 'c-mode-hook 'lwg-mode)
   ;;(setq lsp-java-server-install-dir "/home/liweigao/.emacs.d/private/jdt/jdt-language-server-0.66.0-202012030122/")
   )
 
