@@ -35,7 +35,8 @@ This function should only modify configuration layer settings."
    '(yaml
      python
      lwg
-     (java :variables java-backend 'meghanada)
+     (java :variables
+           java-backend 'lsp)
      (c-c++ :variables
             c-c++-enable-clang-support t
             ;;c-c++-lsp-enable-semantic-highlight 'rainbow
@@ -50,7 +51,7 @@ This function should only modify configuration layer settings."
      auto-completion
      better-defaults
      emacs-lisp
-     ;; git
+     git
      helm
      lsp
      markdown
@@ -79,7 +80,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(evil-collection)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -526,6 +527,7 @@ before packages are loaded."
   (setq c-basic-offset 4)
   (setq projectile-enable-caching t)
   (setq lsp-enable-file-watchers nil)
+  (setq lsp-java-server-install-dir "/home/liweigao/work/project/spacemacs/download/jdt-language-server/jdt-language-server-0.68.0-202101202016/")
   (define-coding-system-alias 'UTF-8 'utf-8)
   (blink-cursor-mode)
   (browse-kill-ring-default-keybindings)
@@ -541,7 +543,6 @@ before packages are loaded."
   ;;(setq iedit-toggle-key-default t)
   ;;(require 'android-mode)
   ;;(setq android-mode-sdk-dir "/home/liweigao/software/android/sdk/")
-  ;;(setq lsp-java-server-install-dir "/home/liweigao/.emacs.d/private/jdt/jdt-language-server-0.66.0-202012030122/")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
