@@ -99,8 +99,7 @@ Each entry is either:
                (setq $p2 (region-end)))
       (progn (setq $p1 (line-beginning-position))
              (setq $p2 (line-end-position))))
-    (copy-to-register ?0 $p1 $p2)
-    ))
+    (copy-to-register ?0 $p1 $p2)))
 
 (defun lwg-paste-from-register-0 ()
   "paste text from register 0"
@@ -115,8 +114,12 @@ Each entry is either:
   (define-key evil-insert-state-map (kbd "C-k") 'previous-line)
   (define-key evil-insert-state-map (kbd "C-l") 'forward-char)
   (define-key evil-insert-state-map (kbd "C-y") 'lwg-copy-to-register-0)
-  (define-key evil-insert-state-map (kbd "C-p") 'lwg-paste-from-register-0)
-  )
+  (define-key evil-insert-state-map (kbd "C-p") 'lwg-paste-from-register-0))
+
+(eval-after-load "meghanada"
+  '(progn
+     (message "---> lwg meghanada")
+     (define-key meghanada-mode-map (kbd "<f5>") 'meghanada-jump-declaration)))
 
 (defun un-indent-by-removing-4-spaces ()
   "remove 4 spaces from beginning of of line"

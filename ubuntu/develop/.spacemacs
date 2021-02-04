@@ -36,12 +36,14 @@ This function should only modify configuration layer settings."
      python
      lwg
      (java :variables
-           java-backend 'lsp)
+           java-backend 'meghanada)
      (c-c++ :variables
             c-c++-enable-clang-support t
             ;;c-c++-lsp-enable-semantic-highlight 'rainbow
             c-c++-backend 'lsp-ccls)
-     gtags
+     (groovy :variables
+             groovy-backend 'company-groovy)
+     ;;gtags
      common-lisp
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -526,11 +528,14 @@ before packages are loaded."
   (load-file "/home/liweigao/.emacs.d/private/local/lwg-mode.el")
   (setq c-basic-offset 4)
   (setq projectile-enable-caching t)
+  (setq vc-follow-symlinks t)
   (setq lsp-enable-file-watchers nil)
   (setq lsp-java-server-install-dir "/home/liweigao/work/project/spacemacs/download/jdt-language-server/jdt-language-server-0.68.0-202101202016/")
   (define-coding-system-alias 'UTF-8 'utf-8)
   (blink-cursor-mode)
   (browse-kill-ring-default-keybindings)
+  (require 'android-mode)
+  (setq android-mode-sdk-dir "/home/liweigao/Android/Sdk/")
   (global-set-key (kbd "<backtab>") 'evil-shift-left)
   (global-set-key (kbd "M-n") 'evil-jump-forward)
   (global-set-key (kbd "M-p") 'evil-jump-backward)
@@ -541,8 +546,6 @@ before packages are loaded."
   (spacemacs/set-leader-keys "s e" 'iedit-mode)
   (spacemacs/set-leader-keys "m g w" 'lsp-find-declaration)
   ;;(setq iedit-toggle-key-default t)
-  ;;(require 'android-mode)
-  ;;(setq android-mode-sdk-dir "/home/liweigao/software/android/sdk/")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
