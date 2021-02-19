@@ -119,6 +119,7 @@ Each entry is either:
 (eval-after-load "meghanada"
   '(progn
      (message "---> lwg meghanada")
+     (add-hook 'meghanada-mode-hook 'xref-etags-mode)
      (define-key meghanada-mode-map (kbd "<f5>") 'meghanada-jump-declaration)))
 
 (defun un-indent-by-removing-4-spaces ()
