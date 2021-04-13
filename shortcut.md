@@ -37,7 +37,7 @@
 | leader s e    | 进入、退出iedit-mode                                                              |
 | leader n r    | 只显示当前函数，方便只在这一个函数上的操作或修改                                  |
 | 输入框action  | 执行命令弹出echo回显区的输入框后，如果右下提示C-c或者C-z说明可以执行action        |
-|            |                                                      |
+| leader '      | 弹出命令行界面                                                                                  |
 
 | mark-ring   | 描述                                                                       |
 | :---        | :---                                                                       |
