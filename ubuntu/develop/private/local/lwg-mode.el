@@ -15,6 +15,10 @@
             map))
 
 (add-hook 'c-mode-hook 'lwg-mode)
+(setq auto-mode-alist
+      (append
+       '(("\\.mak\\'" . makefile-mode))
+       auto-mode-alist))
 (message "---> load lwg-mode")
 (provide 'lwg-mode)
 
