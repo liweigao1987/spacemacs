@@ -1,43 +1,44 @@
 #shortcut for spacemacs
 
-| emacs按键     | 描述                                                                              |
-|:--------------|:----------------------------------------------------------------------------------|
-| leader t E e  | 在holy和evil模式之间切换                                                          |
-| C-\           | 切换输入法                                                                        |
-| C-S-backspace | 删除整行                                                                          |
-| C-M-a         | 跳到函数开头                                                                      |
-| C-M-e         | 跳到函数结尾                                                                      |
-| C-insert      | 拷贝                                                                              |
-| S-insert      | 粘贴                                                                              |
-| M-w ?         | easy-kill帮助                                                                     |
-| leader f y y  | 拷贝当前目录绝对路径                                                              |
-| leader f y n  | 拷贝当前buffer的文件名                                                            |
-| leader f y D  | 拷贝相对工程根目录的路径                                                          |
-| C-x d         | 进入dired模式,可创建目录等操作                                                    |
-| C-c C-w f     | treemacs window, set default workspace                                            |
-| leader i k    | 下方插入空行                                                                      |
-| leader i j    | 上方插入空行                                                                      |
-| leader j c    | 跳转到最近改动的位置                                                              |
-| M-s o ...     | 打开occur搜索列表，ｏ, C-o                                                        |
-| M-x M-n       | 下一个输入命令记录                                                                |
-| M-x M-p       | 上一个输入命令记录                                                                |
-| M-/           | 触发自动补全                                                                      |
-| C-;           | 打开黏贴板                                                                        |
-| leader F ...  | frame操作                                                                         |
-| C-x h         | 全选                                                                              |
-| C-M-h         | 选中整个函数代码                                                                  |
-| M-h           | 选中段                                                                            |
-| leader m g g  | 跳转到符号定义                                                                    |
-| leader m g r  | 搜索该符号的引用                                                                  |
-| leader s P F3 | 把搜索结果保存到buffer里面，可以C-o逐个打开，类似occur,该action适用于所有搜索结果 |
-| M-.           | 查找定义                                                                          |
-| M-?           | 查找引用                                                                          |
-| M-y           | 列出kill-ring内容, n/p 切换条目                                                   |
-| C-x z         | 重复前一条命令，之后可以只按z，不断重复                                           |
-| leader s e    | 进入、退出iedit-mode                                                              |
-| leader n r    | 只显示当前函数，方便只在这一个函数上的操作或修改                                  |
-| 输入框action  | 执行命令弹出echo回显区的输入框后，如果右下提示C-c或者C-z说明可以执行action        |
-| leader '      | 弹出命令行界面                                                                                  |
+| emacs按键       | 描述                                                                              |
+|:----------------|:----------------------------------------------------------------------------------|
+| leader t E e    | 在holy和evil模式之间切换                                                          |
+| C-\             | 切换输入法                                                                        |
+| C-S-backspace   | 删除整行                                                                          |
+| C-M-a           | 跳到函数开头                                                                      |
+| C-M-e           | 跳到函数结尾                                                                      |
+| C-insert        | 拷贝                                                                              |
+| S-insert        | 粘贴                                                                              |
+| M-w ?           | easy-kill帮助                                                                     |
+| leader f y y    | 拷贝当前目录绝对路径                                                              |
+| leader f y n    | 拷贝当前buffer的文件名                                                            |
+| leader f y D    | 拷贝相对工程根目录的路径                                                          |
+| C-x d           | 进入dired模式,可创建目录等操作                                                    |
+| C-c C-w f       | treemacs window, set default workspace                                            |
+| leader i k      | 下方插入空行                                                                      |
+| leader i j      | 上方插入空行                                                                      |
+| leader j c      | 跳转到最近改动的位置                                                              |
+| M-s o ...       | 打开occur搜索列表，ｏ, C-o                                                        |
+| M-x M-n         | 下一个输入命令记录                                                                |
+| M-x M-p         | 上一个输入命令记录                                                                |
+| M-/             | 触发自动补全                                                                      |
+| C-;             | 打开黏贴板                                                                        |
+| leader F ...    | frame操作                                                                         |
+| C-x h           | 全选                                                                              |
+| C-M-h           | 选中整个函数代码                                                                  |
+| M-h             | 选中段                                                                            |
+| leader m g g    | 跳转到符号定义                                                                    |
+| leader m g r    | 搜索该符号的引用                                                                  |
+| leader s P F3   | 把搜索结果保存到buffer里面，可以C-o逐个打开，类似occur,该action适用于所有搜索结果 |
+| M-.             | 查找定义                                                                          |
+| M-?             | 查找引用                                                                          |
+| M-y             | 列出kill-ring内容, n/p 切换条目                                                   |
+| C-x z           | 重复前一条命令，之后可以只按z，不断重复                                           |
+| leader s e      | 进入、退出iedit-mode                                                              |
+| leader n r      | 只显示当前函数，方便只在这一个函数上的操作或修改                                  |
+| 输入框action    | 执行命令弹出echo回显区的输入框后，如果右下提示C-c或者C-z说明可以执行action        |
+| leader '        | 弹出命令行界面                                                                    |
+| leader ; 数字 ; | 注释/反注释行，行数由数字决定，;;注释/反注释当前行                                                                                  |
 
 | mark-ring   | 描述                                                                       |
 | :---        | :---                                                                       |
