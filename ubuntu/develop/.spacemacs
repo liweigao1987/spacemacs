@@ -34,6 +34,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layers
    '(javascript
      yaml
+     (json : variables json-backend 'lsp)
      lwg
      (python :variables
              python-backend 'lsp
