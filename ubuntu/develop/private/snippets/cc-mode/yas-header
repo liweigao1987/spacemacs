@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : c header file guard
+#key : yas-header
+#contributor : liweigao
+# --
+#ifndef ${2:_`(upcase (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))`_H_}
+#define $2
+
+$1$0
+
+#endif /* $2 */

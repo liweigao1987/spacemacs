@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+#name : c file author declaration
+#key : yas-author
+#contributor : liweigao
+# --
+/***********************************************************
+* @author        liweigao
+* @date          `(format-time-string "%Y-%m-%d")`
+* @brief         $0
+***********************************************************/
+
