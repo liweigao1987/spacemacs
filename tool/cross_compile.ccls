@@ -1,0 +1,5 @@
+%compile_commands.json
+--target=armv7a-linux-gnueabi
+%c
+%h
+
