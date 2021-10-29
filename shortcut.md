@@ -40,8 +40,8 @@
 | leader '        | 弹出命令行界面                                                                    |
 | leader ; 数字 ; | 注释/反注释行，行数由数字决定，;;注释/反注释当前行                                |
 | M-s h .         | 高亮光标所在位置的符号（不同颜色）                                                |
-| C-c C-l         | 在snippet模式加载yasnippet模板                                                                 |
-|                 |                                                                                   |
+| C-c C-l         | 在snippet模式加载yasnippet模板                                                    |
+| leader s o      | overlay方式高亮显示当前符号                                                                                  |
 
 | mark-ring   | 描述                                                                       |
 | :---        | :---                                                                       |
