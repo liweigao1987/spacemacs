@@ -554,8 +554,7 @@ before packages are loaded."
   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file))
   (setq lsp-headerline-breadcrumb-enable-diagnostics nil)
   (setq lsp-headerline-breadcrumb-icons-enable nil)
-  (setq lsp-headerline-arrow #("/" 0 1
-                               (face lsp-headerline-breadcrumb-separator-face)))
+  (setq lsp-headerline-arrow "/")
   (setq lsp-java-server-install-dir "/home/liweigao/work/project/spacemacs/download/jdt-language-server/jdt-language-server-0.68.0-202101202016/")
   (define-coding-system-alias 'UTF-8 'utf-8)
   (blink-cursor-mode)
@@ -594,5 +593,5 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(lsp-headerline-breadcrumb-path-face ((t (:foreground "turquoise")))))
 )
