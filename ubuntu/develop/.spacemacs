@@ -591,11 +591,14 @@ This function is called at the very end of Spacemacs initialization."
  '(org-capture-templates
    '(
      ("t" "Task" entry (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/task.org")
-      "* TODO %^{任务名}
+      "* TODO [P:%^{priority|5|0|1|2|3|4|5|6|7|8|9}] %^{title} %^g
 %?
 deadline: %^t" :empty-lines 1)
-     ("m" "Memory" entry (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/memory.org")
-      "* %^{标题} %^g
+     ("w" "Work" entry (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/work.org")
+      "* %^{title} :work:%^g
+%?" :empty-lines 1)
+     ("l" "Life" entry (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/life.org")
+      "* %^{title} :life:%^g
 %?" :empty-lines 1)
      )
    )
