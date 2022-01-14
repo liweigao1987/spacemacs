@@ -571,6 +571,7 @@ before packages are loaded."
   (spacemacs/set-leader-keys "s e" 'iedit-mode)
   (spacemacs/set-leader-keys "m g w" 'lsp-find-declaration)
   (setq org-agenda-files '("/home/liweigao/work/project/spacemacs/org/agenda/"))
+  (setq org-default-notes-file "/home/liweigao/work/project/spacemacs/org/agenda/default.org")
   ;;(setq iedit-toggle-key-default t)
   )
 
@@ -588,12 +589,16 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
  '(org-capture-templates
-   '(("n" "Note" entry
-      (file "/home/liweigao/work/project/spacemacs/org/agenda/note.org")
-      "* TODO %?
-  %t
-  %i
-" :empty-lines 1)))
+   '(
+     ("t" "Task" entry (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/task.org")
+      "* TODO %^{任务名}
+%?
+deadline: %^t" :empty-lines 1)
+     ("m" "Memory" entry (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/memory.org")
+      "* %^{标题} %^g
+%?" :empty-lines 1)
+     )
+   )
  '(package-selected-packages
    '(csv-mode seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake minitest enh-ruby-mode chruby bundler inf-ruby web-beautify tern prettier-js npm-mode nodejs-repl livid-mode skewer-mode js2-refactor multiple-cursors js2-mode js-doc import-js grizzl impatient-mode htmlize simple-httpd add-node-modules-path powershell bmx-mode browse-kill-ring lsp-ui-util lsp-ui lsp-julia yaml-mode lsp-javacomp yapfify stickyfunc-enhance sphinx-doc pytest pyenv-mode py-isort pippel pipenv pyvenv pip-requirements lsp-python-ms lsp-pyright live-py-mode importmagic epc ctable concurrent helm-pydoc helm-cscope xcscope dap-mode posframe lsp-treemacs bui lsp-mode dash-functional cython-mode counsel-gtags counsel swiper ivy company-anaconda blacken anaconda-mode pythonic cpp-auto-include yasnippet-snippets xterm-color ws-butler writeroom-mode winum which-key vterm volatile-highlights vi-tilde-fringe uuidgen use-package unfill undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org terminal-here symon symbol-overlay string-inflection spaceline-all-the-icons shell-pop restart-emacs rainbow-delimiters popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless mwim multi-term move-text mmm-mode markdown-toc macrostep lorem-ipsum link-hint indent-guide hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-ls-git helm-gtags helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate google-c-style golden-ratio gh-md ggtags fuzzy font-lock+ flyspell-correct-helm flycheck-ycmd flycheck-rtags flycheck-pos-tip flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emr elisp-slime-nav editorconfig dumb-jump dotenv-mode disaster diminish devdocs define-word company-ycmd company-rtags company-c-headers column-enforce-mode clean-aindent-mode centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent ace-link ace-jump-helm-line ac-ispell)))
 (custom-set-faces
