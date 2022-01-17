@@ -595,7 +595,7 @@ This function is called at the very end of Spacemacs initialization."
 %?
 deadline: %^t" :empty-lines 1)
      ("w" "Weekly report" entry (file+weektree "/home/liweigao/work/project/spacemacs/org/agenda/weekly.org")
-      "* TODO  week:%<%W>  %t :weekly:
+      "* TODO  %<%Y>年%<%W>周  %t :weekly:
 鸿鹄二代语音方案：
 %?
 bes智能音箱：
