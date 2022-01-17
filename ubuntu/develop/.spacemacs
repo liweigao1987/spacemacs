@@ -594,10 +594,22 @@ This function is called at the very end of Spacemacs initialization."
       "* TODO [P:%^{priority|5|0|1|2|3|4|5|6|7|8|9}] %^{title} %^g
 %?
 deadline: %^t" :empty-lines 1)
-     ("w" "Work" entry (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/work.org")
+     ("w" "Weekly report" entry (file+weektree "/home/liweigao/work/project/spacemacs/org/agenda/weekly.org")
+      "* TODO  week:%<%W>  %t :weekly:
+鸿鹄二代语音方案：
+%?
+bes智能音箱：
+
+车联网TTS：
+
+LINUX车机CCIC：
+
+" :empty-lines 1)
+     ("m" "Memory")
+     ("mw" "Work" entry (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/work.org")
       "* %^{title} :work:%^g
 %?" :empty-lines 1)
-     ("l" "Life" entry (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/life.org")
+     ("ml" "Life" entry (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/life.org")
       "* %^{title} :life:%^g
 %?" :empty-lines 1)
      )
