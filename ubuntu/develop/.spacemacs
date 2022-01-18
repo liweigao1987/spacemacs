@@ -611,6 +611,10 @@ deadline: %^t" :empty-lines 1)
       (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/work.org")
       "* %^{title} :work:%^g
 %?" :empty-lines 1)
+     ("mt" "Tool" entry
+      (file "/home/liweigao/work/project/spacemacs/org/agenda/tool.org")
+      "* %^{title} :tool:%^g
+%?" :empty-lines 1)
      ("ml" "Life" entry
       (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/life.org")
       "* %^{title} :life:%^g

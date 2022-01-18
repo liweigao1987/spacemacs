@@ -1,0 +1,4 @@
+
+* cmake生成compile_commands.json                                 :tool:cmake:
+在CMakeLists.txt中添加 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+在命令行中添加-DCMAKE_EXPORT_COMPILE_COMMANDS=on
