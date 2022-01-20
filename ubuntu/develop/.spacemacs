@@ -572,6 +572,10 @@ before packages are loaded."
   (spacemacs/set-leader-keys "m g w" 'lsp-find-declaration)
   (setq org-agenda-files '("/home/liweigao/work/project/spacemacs/org/agenda/"))
   (setq org-default-notes-file "/home/liweigao/work/project/spacemacs/org/agenda/default.org")
+  (setq org-crypt-tag-matcher "account")
+  (setq org-tags-exclude-from-inheritance (quote ("account")))
+  (setq org-crypt-key nil)
+  (org-crypt-use-before-save-magic)
   ;;(setq iedit-toggle-key-default t)
   )
 
@@ -606,6 +610,8 @@ deadline: %^t" :empty-lines 1)
 - LINUX车机CCIC：
 
 " :empty-lines 2)
+     ("a" "Account" entry (file "/home/liweigao/work/project/spacemacs/org/agenda/account.org")
+      "* %U - %^{title} :account:\n - account: %^{account}\n - password: %^{password}" :empty-lines 1 :kill-buffer t)
      ("m" "Memory")
      ("mw" "Work" entry
       (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/work.org")
