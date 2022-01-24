@@ -30,7 +30,7 @@
          (format "\n* @param %s - ${%d:Description of %s}"
                  (car x) (incf idx) (car x)))
        args
-       "\n")
+       "")
       (if (and return-name (not (string-equal "void" return-name)))
           (format "\n* @return ${%d:%s}" (incf idx) return-name)
         "")))))
