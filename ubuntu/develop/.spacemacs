@@ -38,6 +38,7 @@ This function should only modify configuration layer settings."
      yaml
      (json : variables json-backend 'lsp)
      lwg
+     semantic
      (python :variables
              python-backend 'lsp
              python-lsp-server 'pyright)

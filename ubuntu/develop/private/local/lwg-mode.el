@@ -15,6 +15,7 @@
             map))
 
 (add-hook 'c-mode-hook 'lwg-mode)
+(add-hook 'c-mode-hook 'semantic-mode)
 (setq auto-mode-alist
       (append
        '(("\\.mak\\'" . makefile-mode))
