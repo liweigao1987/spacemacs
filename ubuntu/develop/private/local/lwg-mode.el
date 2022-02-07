@@ -12,6 +12,7 @@
   :lighter " lwg"
   :keymap (let ((map (make-sparse-keymap)))
             (define-key map (kbd "<f8>") 'print-lwg)
+            (define-key map (kbd "<f9>") 'ff-find-other-file)
             map))
 
 (add-hook 'c-mode-hook 'lwg-mode)
