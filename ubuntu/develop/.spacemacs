@@ -551,7 +551,7 @@ before packages are loaded."
   (setq c-basic-offset 4)
   (setq projectile-enable-caching t)
   (setq vc-follow-symlinks t)
-  ;; (setq lsp-enable-file-watchers nil)
+  (setq lsp-enable-file-watchers nil)
   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file))
   (setq lsp-headerline-breadcrumb-enable-diagnostics nil)
   (setq lsp-headerline-breadcrumb-icons-enable nil)
