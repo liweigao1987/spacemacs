@@ -618,6 +618,10 @@ deadline: %^t" :empty-lines 1)
 
 - 车联网TTS：
 
+- 手百TTS：
+
+- 百度地图TTS：
+
 - LINUX车机CCIC：
 
 " :empty-lines 2)
