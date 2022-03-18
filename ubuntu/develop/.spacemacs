@@ -624,6 +624,8 @@ deadline: %^t" :empty-lines 1)
 
 - LINUX车机CCIC：
 
+- 渐冻症监控APP：
+
 " :empty-lines 2)
      ("a" "Account" entry
       (file "/home/liweigao/work/project/spacemacs/org/agenda/account.org")
