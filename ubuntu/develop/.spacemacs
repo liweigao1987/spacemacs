@@ -610,6 +610,7 @@ before packages are loaded."
   (setq org-tags-exclude-from-inheritance (quote ("account")))
   (setq org-crypt-key nil)
   (org-crypt-use-before-save-magic)
+  (setq native-comp-async-report-warnings-errors nil)
   ;;(setq iedit-toggle-key-default t)
   ;; (use-package all-the-icons-ibuffer
   ;;   :ensure t
