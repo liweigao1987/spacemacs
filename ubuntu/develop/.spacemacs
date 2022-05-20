@@ -659,6 +659,8 @@ deadline: %^t" :empty-lines 1)
 
 - 渐冻症监控APP：
 
+- 度秘冬时闹钟：
+
 " :empty-lines 2)
      ("a" "Account" entry
       (file "/home/liweigao/work/project/spacemacs/org/agenda/account.org")
