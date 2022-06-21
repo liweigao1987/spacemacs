@@ -647,17 +647,19 @@ deadline: %^t" :empty-lines 1)
       "* TODO  %<%Y>年%<%W>周  %t :weekly:
 - 鸿鹄二代语音方案：
 	%?
-- bes智能音箱：
+- 智慧公交大屏TTS：
 
-- 车联网TTS：
+- android车联网TTS：
 
 - 手百TTS：
 
 - 百度地图TTS：
 
-- LINUX车机CCIC：
+- LINUX TTS：
 
-- 渐冻症监控APP：
+- 私有化TTS：
+
+- 跨平台TTS：
 
 - 度秘冬时闹钟：
 
