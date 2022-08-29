@@ -611,6 +611,7 @@ before packages are loaded."
   (setq org-crypt-key nil)
   (org-crypt-use-before-save-magic)
   (setq native-comp-async-report-warnings-errors nil)
+  (set-frame-parameter (car (frame-list)) 'undecorated t)
   ;;(setq iedit-toggle-key-default t)
   ;; (use-package all-the-icons-ibuffer
   ;;   :ensure t
