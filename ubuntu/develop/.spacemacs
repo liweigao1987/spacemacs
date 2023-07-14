@@ -38,7 +38,7 @@ This function should only modify configuration layer settings."
      javascript
      yaml
      ivy
-     helm
+     ;; helm
      ;; compleseus
      (json : variables json-backend 'lsp)
      lwg
@@ -68,7 +68,8 @@ This function should only modify configuration layer settings."
      (cmake :variables
             cmake-backend 'lsp)
      git
-     lsp
+     (lsp :variables
+          lsp-lens-enable nil)
      markdown
      multiple-cursors
      ;; org
