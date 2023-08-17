@@ -37,8 +37,8 @@ This function should only modify configuration layer settings."
      ruby
      javascript
      yaml
-     ivy
-     ;; helm
+     ;; ivy
+     helm
      ;; compleseus
      (json : variables json-backend 'lsp)
      lwg
@@ -79,7 +79,8 @@ This function should only modify configuration layer settings."
      spell-checking
      syntax-checking
      ;; version-control
-     treemacs)
+     treemacs
+     )
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -641,6 +642,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(treemacs-use-follow-mode nil)
  '(evil-want-Y-yank-to-eol nil)
  '(flycheck-checker-error-threshold nil)
  '(lsp-enable-links nil)
