@@ -617,7 +617,9 @@ before packages are loaded."
   (org-crypt-use-before-save-magic)
   (setq native-comp-async-report-warnings-errors nil)
   (set-frame-parameter (car (frame-list)) 'undecorated t)
-  (setq lsp-enable-on-type-formatting nil)
+  (add-to-list 'spacemacs-indent-sensitive-modes 'c-mode)
+  (add-to-list 'spacemacs-indent-sensitive-modes 'c++-mode)
+  ;; (setq lsp-enable-on-type-formatting nil)
   ;;(setq iedit-toggle-key-default t)
   ;; (use-package all-the-icons-ibuffer
   ;;   :ensure t
