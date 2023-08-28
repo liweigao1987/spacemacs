@@ -61,8 +61,8 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     (auto-completion :variables
-                      auto-completion-enable-snippets-in-popup t)
+     ;; (auto-completion :variables
+     ;;                  auto-completion-enable-snippets-in-popup t)
      better-defaults
      emacs-lisp
      (cmake :variables
@@ -647,6 +647,8 @@ This function is called at the very end of Spacemacs initialization."
  '(treemacs-use-follow-mode nil)
  '(evil-want-Y-yank-to-eol nil)
  '(flycheck-checker-error-threshold nil)
+ '(hippie-expand-try-functions-list
+   '(try-expand-dabbrev try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-file-name-partially try-complete-file-name try-expand-all-abbrevs try-expand-list try-expand-line try-complete-lisp-symbol-partially try-complete-lisp-symbol yas-hippie-try-expand))
  '(lsp-enable-links nil)
  '(org-capture-templates
    '(("t" "Task" entry
