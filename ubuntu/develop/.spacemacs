@@ -80,6 +80,8 @@ This function should only modify configuration layer settings."
      syntax-checking
      ;; version-control
      treemacs
+     asm
+     ;; cscope
      )
 
 
