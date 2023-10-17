@@ -47,7 +47,11 @@
 | M-x add-file-local-variable-prop-line | 在当前buffer中增加一个文件属性变量，例如：关闭当前文件的自动保存功能 variable: buffer-auto-save-file-name   value: nil |
 | M-x org-decrypt-entry                 | 解密当前org条目                                                                                                        |
 | shift-enter                           | open file in other window                                                                                              |
-| C-x ( commands C-x ) C-x e            | repeat commands                                                                                                                       |
+| C-x ( commands C-x ) C-x e            | repeat commands                                                                                                        |
+| leader k d x                          | 删除当前光标所在表达式，括号范围                                                                                       |
+| leader k D x                          | 删除光标前一个位置所在的表达式，括号范围                                                                               |
+| leader k w                            | 在当前位置的表达式增加括号                                                                                             |
+| leader k W                            | 在当前位置的表达式删除括号                                                                                                                       |
 
 | mark-ring   | 描述                                                                       |
 | :---        | :---                                                                       |
