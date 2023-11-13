@@ -624,6 +624,7 @@ before packages are loaded."
   (set-frame-parameter (car (frame-list)) 'undecorated t)
   (add-to-list 'spacemacs-indent-sensitive-modes 'c-mode)
   (add-to-list 'spacemacs-indent-sensitive-modes 'c++-mode)
+  (indent-guide-global-mode)
   ;; (setq lsp-enable-on-type-formatting nil)
   ;;(setq iedit-toggle-key-default t)
   ;; (use-package all-the-icons-ibuffer
