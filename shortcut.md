@@ -29,7 +29,6 @@
 | M-x list-faces-display                | customize face                                                                                                         |
 | M-x list-colors-display               | scan colors                                                                                                            |
 | M-x add-file-local-variable-prop-line | 在当前buffer中增加一个文件属性变量，例如：关闭当前文件的自动保存功能 variable: buffer-auto-save-file-name   value: nil |
-| M-x org-decrypt-entry                 | 解密当前org条目                                                                                                        |
 | shift-enter                           | open file in other window                                                                                              |
 | C-x ( commands C-x ) C-x e            | repeat commands                                                                                                        |
 
@@ -181,3 +180,8 @@
 |:-------------|:-------------------|
 | leader t TAB | 打开缩进列对齐符号 |
 
+| org                   | 描述            |
+|:----------------------|:----------------|
+| org-agenda            | 搜索现有org文档 |
+| org-capture           | 记录org文档     |
+| M-x org-decrypt-entry | 解密当前org条目 |
