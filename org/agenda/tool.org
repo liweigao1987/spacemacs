@@ -3,7 +3,7 @@
 在CMakeLists.txt中添加 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 在命令行中添加-DCMAKE_EXPORT_COMPILE_COMMANDS=on
 
-* git :tool:code-manage:
+* git                                                              :tool:git:
 1. 解决二进制文件合并冲突问题
    git checkout [--theirs/--ours] -- path/to/binaryfile
    git add path/to/binaryfile
