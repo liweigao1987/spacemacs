@@ -9,3 +9,6 @@
    git add path/to/binaryfile
    即ours是当前分支的，theirs是被合并的分支的
 
+* split                                                          :tool:shell:split:
+1. split -b 50m bdsc.log -d bdsc_ 分割文件
+
