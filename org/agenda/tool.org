@@ -1,7 +1,8 @@
 
-* cmake生成compile_commands.json                                 :tool:cmake:
+* 生成compile_commands.json                                      :tool:cmake:
 在CMakeLists.txt中添加 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 在命令行中添加-DCMAKE_EXPORT_COMPILE_COMMANDS=on
+iar工具生成compile_commands.json: iarbuild.exe tumia.ewp -jsondb Debug -output compile_commands.json
 
 * git                                                              :tool:git:
 1. 解决二进制文件合并冲突问题
