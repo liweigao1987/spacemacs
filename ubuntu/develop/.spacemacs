@@ -608,6 +608,7 @@ before packages are loaded."
   (global-set-key (kbd "<backtab>") 'evil-shift-left)
   (global-set-key (kbd "M-n") 'evil-jump-forward)
   (global-set-key (kbd "M-p") 'evil-jump-backward)
+  (global-set-key (kbd "M-q") 'mark-sexp)
   (global-set-key [remap kill-ring-save] 'easy-kill)
   (global-set-key [remap mark-sexp] 'easy-mark)
   (spacemacs/set-leader-keys "d f" 'find-name-dired)
