@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+#name : extern c
+#key : yas-externc
+#contributor : liweigao
+# --
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+$1$0
+
+#ifdef __cplusplus
+}
+#endif
