@@ -626,6 +626,7 @@ before packages are loaded."
   (add-to-list 'spacemacs-indent-sensitive-modes 'c-mode)
   (add-to-list 'spacemacs-indent-sensitive-modes 'c++-mode)
   (indent-guide-global-mode)
+  (setq helm-move-to-line-cycle-in-source nil)
   ;; (setq lsp-enable-on-type-formatting nil)
   ;;(setq iedit-toggle-key-default t)
   ;; (use-package all-the-icons-ibuffer
