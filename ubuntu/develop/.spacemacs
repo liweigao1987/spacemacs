@@ -36,7 +36,13 @@ This function should only modify configuration layer settings."
      octave
      csv
      ruby
-     javascript
+     web-beautify
+     (javascript :variables
+                 javascript-backend 'tern
+                 javascript-fmt-tool 'web-beautify
+                 javascript-import-tool 'import-js)
+     (typescript :variables
+                 typescript-backend 'tide)
      yaml
      ;; ivy
      helm
