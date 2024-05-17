@@ -31,6 +31,7 @@
 | M-x add-file-local-variable-prop-line | 在当前buffer中增加一个文件属性变量，例如：关闭当前文件的自动保存功能 variable: buffer-auto-save-file-name   value: nil |
 | shift-enter                           | open file in other window                                                                                              |
 | C-x ( commands C-x ) C-x e            | repeat commands                                                                                                        |
+| C-u 数字 shortcut                     | 重复执行命令N次                                                                                                                       |
 
 | mark-ring   | 描述                                                                       |
 |:------------|:---------------------------------------------------------------------------|
@@ -42,7 +43,9 @@
 | C-x C-spc   | 在global内的ring里面循环回溯，每个文件只保留一个最后设置的mark供回溯       |
 | C-@         | 设置mark标记，可以%跳转或者移动光标多选                                    |
 | M-@         | 增量标记单词                                                               |
-| C-M-@       | 标记当前表达式                                                                       |
+| C-M-@       | 标记当前表达式                                                             |
+| M-n         | 向前跳转                                                                   |
+| M-p         | 向后跳转                                                                           |
 
 | register         | 描述                                     |
 | :---             | :---                                     |
@@ -194,3 +197,16 @@
 | org-capture           | 记录org文档     |
 | M-x org-decrypt-entry | 解密当前org条目 |
 
+| 窗口         | 描述               |
+|:-------------|:-------------------|
+| leader w u/U | 回退窗口/撤销回退 |
+
+| 编辑       | 描述            |
+|:-----------|:----------------|
+| leader a u | undo tree       |
+| M-{/}      | 撤销到最初/最终 |
+| q          | 当前点退出      |
+| C-q        | 放弃            |
+| C-/        | undo            |
+| C-?        | redo            |
+|            |                 |
