@@ -134,4 +134,13 @@ Each entry is either:
       (when (looking-at (concat "^" (make-string tab-width ?\ )))
         (replace-match "")))))
 
+
+(defun lwg-treemacs-mark-unmark-path-easy ()
+  (interactive)
+  (if (equal major-mode 'treemacs-mode)
+      (progn
+        (treemacs-mark-or-unmark-path-at-point)
+        (call-interactively #'treemacs-next-line))
+    (message "not in treemacs mode!")))
+
 ;;; packages.el ends here

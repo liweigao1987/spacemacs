@@ -633,6 +633,9 @@ before packages are loaded."
   (add-to-list 'spacemacs-indent-sensitive-modes 'c++-mode)
   (indent-guide-global-mode)
   (setq helm-move-to-line-cycle-in-source nil)
+  (with-eval-after-load 'treemacs
+    (define-key treemacs-mode-map (kbd "M") 'lwg-treemacs-mark-unmark-path-easy)
+    (define-key treemacs-mode-map (kbd "D") 'treemacs-delete-marked-paths))
   ;; (setq lsp-enable-on-type-formatting nil)
   ;;(setq iedit-toggle-key-default t)
   ;; (use-package all-the-icons-ibuffer
