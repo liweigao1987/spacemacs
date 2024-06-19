@@ -58,7 +58,7 @@ This function should only modify configuration layer settings."
      (c-c++ :variables
             c-c++-enable-clang-support t
             ;;c-c++-lsp-enable-semantic-highlight 'rainbow
-            c-c++-backend 'lsp-ccls)
+            c-c++-backend 'lsp-clangd)
      (groovy :variables
              groovy-backend 'company-groovy)
      ;;gtags
