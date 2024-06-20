@@ -30,3 +30,18 @@ GXN1eh9FbDiX1ACdd7XKMV7hL7x0ClBJLUJ-zFfKofjaj2yxE53xauIfkqZ8FoLpcZ0Ux6McTyNmODDS
    https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html
    or C-h i m elisp在emacs内阅读
 
+* semgrep                                                      :tool:semgrep:
+1. token
+   Login enables additional proprietary Semgrep Registry rules and running custom policies from Semgrep Cloud Platform.
+Opening login at: https://semgrep.dev/login?cli-token=3b03d74a-655f-4066-8f57-5d7eb5249f94&docker=False&gha=False
+
+Once you've logged in, return here and you'll be ready to start using new Semgrep rules.
+Opening in existing browser session.
+Saved login token
+
+	6e8862ce2f69eba149b45e187a75d807f2b659b6a8d57328df072a7bdc880d67
+
+in /home/liweigao/.semgrep/settings.yml.
+Note: You can always generate more tokens at https://semgrep.dev/orgs/-/settings/tokens
+
+
