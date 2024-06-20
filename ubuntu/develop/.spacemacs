@@ -636,6 +636,8 @@ before packages are loaded."
   (with-eval-after-load 'treemacs
     (define-key treemacs-mode-map (kbd "M") 'lwg-treemacs-mark-unmark-path-easy)
     (define-key treemacs-mode-map (kbd "D") 'treemacs-delete-marked-paths))
+  (with-eval-after-load 'lsp-mode
+    (setq lsp-client-packages (delete 'lsp-semgrep lsp-client-packages)))
   ;; (setq lsp-enable-on-type-formatting nil)
   ;;(setq iedit-toggle-key-default t)
   ;; (use-package all-the-icons-ibuffer
