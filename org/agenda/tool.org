@@ -44,4 +44,8 @@ Saved login token
 in /home/liweigao/.semgrep/settings.yml.
 Note: You can always generate more tokens at https://semgrep.dev/orgs/-/settings/tokens
 
+* github                                                        :tool:github:
+1. unable to access,http code 503
+   unable to access 'https://github.com/melpa/melpa.git/': Received HTTP code 503 from proxy after CONNECT
+   解决办法：git config --global --unset http.proxy
 
