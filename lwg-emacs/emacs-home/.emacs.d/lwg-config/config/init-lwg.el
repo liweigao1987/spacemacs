@@ -61,7 +61,8 @@
     (require 'init-vi-navigate)
     (require 'init-isearch-mb)
     (require 'init-performance)
-    (require 'init-rime)
+    ;; (require 'init-rime)
+
     (require 'init-mind-wave)
     ;;(require 'init-treesit)
     (require 'init-key-echo)
