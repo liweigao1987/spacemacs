@@ -1,0 +1,7 @@
+lwg-emacs/emacs-home/.cache/
+lwg-emacs/emacs-home/.config/pulse/
+lwg-emacs/emacs-home/.local/lib/python3.8/site-packages/
+lwg-emacs/emacs-home/.bash_history
+lwg-emacs/emacs-home/.emacs.d/*
+!lwg-emacs/emacs-home/.emacs.d/init.el
+!lwg-emacs/emacs-home/.emacs.d/lwg-config/config/
