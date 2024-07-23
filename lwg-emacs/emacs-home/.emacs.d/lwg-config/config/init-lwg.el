@@ -63,7 +63,7 @@
     (require 'init-performance)
     (require 'init-rime)
     (require 'init-mind-wave)
-    (require 'init-treesit)
+    ;;(require 'init-treesit)
     (require 'init-key-echo)
 
     ;; 可以延后加载的
