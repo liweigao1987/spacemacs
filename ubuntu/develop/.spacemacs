@@ -108,7 +108,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(evil-collection)
+   dotspacemacs-excluded-packages '(evil-collection eat)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -638,6 +638,12 @@ before packages are loaded."
     (define-key treemacs-mode-map (kbd "D") 'treemacs-delete-marked-paths))
   (with-eval-after-load 'lsp-mode
     (setq lsp-client-packages (delete 'lsp-semgrep lsp-client-packages)))
+  (setq-default bidi-display-reordering nil)
+  (setq bidi-inhibit-bpa t
+        long-line-threshold 1000
+        large-hscroll-threshold 1000
+        syntax-wholeline-max 1000)
+  (spacemacs/toggle-vi-tilde-fringe-off)
   ;; (setq lsp-enable-on-type-formatting nil)
   ;;(setq iedit-toggle-key-default t)
   ;; (use-package all-the-icons-ibuffer
