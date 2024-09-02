@@ -602,7 +602,7 @@ before packages are loaded."
   (setq vc-follow-symlinks t)
   (setq lsp-enable-file-watchers nil)
   ;; (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file))
-  ;; (setq lsp-headerline-breadcrumb-enable-diagnostics nil)
+  (setq lsp-headerline-breadcrumb-enable-diagnostics nil)
   ;; (setq lsp-headerline-breadcrumb-icons-enable nil)
   ;; (setq lsp-headerline-arrow "/")
   (setq lsp-java-server-install-dir "/home/liweigao/work/project/spacemacs/download/jdt-language-server/jdt-language-server-0.68.0-202101202016/")
