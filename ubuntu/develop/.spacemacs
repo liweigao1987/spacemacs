@@ -617,6 +617,7 @@ before packages are loaded."
   (global-set-key (kbd "M-q") 'mark-sexp)
   (global-set-key [remap kill-ring-save] 'easy-kill)
   (global-set-key [remap mark-sexp] 'easy-mark)
+  (global-set-key (kbd "C-'") 'easy-mark)
   (spacemacs/set-leader-keys "d f" 'find-name-dired)
   (spacemacs/set-leader-keys "j m" 'evil-jump-item)
   (spacemacs/set-leader-keys "s e" 'iedit-mode)
