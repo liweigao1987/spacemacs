@@ -611,10 +611,10 @@ before packages are loaded."
   (browse-kill-ring-default-keybindings)
   (require 'android-mode)
   (setq android-mode-sdk-dir "/home/liweigao/Android/Sdk/")
-  (global-set-key (kbd "<backtab>") 'evil-shift-left)
-  (global-set-key (kbd "M-n") 'evil-jump-forward)
-  (global-set-key (kbd "M-p") 'evil-jump-backward)
-  (global-set-key (kbd "M-q") 'mark-sexp)
+  ;; (global-set-key (kbd "<backtab>") 'evil-shift-left)
+  ;; (global-set-key (kbd "M-n") 'evil-jump-forward)
+  ;; (global-set-key (kbd "M-p") 'evil-jump-backward)
+  ;; (global-set-key (kbd "M-q") 'mark-sexp)
   (global-set-key [remap kill-ring-save] 'easy-kill)
   (global-set-key [remap mark-sexp] 'easy-mark)
   (global-set-key (kbd "C-'") 'easy-mark)
@@ -672,8 +672,6 @@ This function is called at the very end of Spacemacs initialization."
    ;; If there is more than one, they won't work right.
    '(evil-want-Y-yank-to-eol nil)
    '(flycheck-checker-error-threshold nil)
-   ;; '(hippie-expand-try-functions-list
-   ;;   '(try-expand-dabbrev try-expand-dabbrev-all-buffers try-expand-dabbrev-from-kill try-complete-file-name-partially try-complete-file-name try-expand-all-abbrevs try-expand-list try-expand-line try-complete-lisp-symbol-partially try-complete-lisp-symbol yas-hippie-try-expand))
    '(lsp-enable-links nil)
    '(org-capture-templates
      '(("t" "Task" entry
@@ -697,6 +695,7 @@ This function is called at the very end of Spacemacs initialization."
         "* %^{title} :life:%^g\12%?" :empty-lines 1)))
    '(package-selected-packages
      '(web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode counsel-css company-web web-completion-data doom-modeline shrink-path all-the-icons-ivy-rich all-the-icons-ibuffer csv-mode seeing-is-believing rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode robe rbenv rake minitest enh-ruby-mode chruby bundler inf-ruby web-beautify tern prettier-js npm-mode nodejs-repl livid-mode skewer-mode js2-refactor multiple-cursors js2-mode js-doc import-js grizzl impatient-mode htmlize simple-httpd add-node-modules-path powershell bmx-mode browse-kill-ring lsp-ui-util lsp-ui lsp-julia yaml-mode lsp-javacomp yapfify stickyfunc-enhance sphinx-doc pytest pyenv-mode py-isort pippel pipenv pyvenv pip-requirements lsp-python-ms lsp-pyright live-py-mode importmagic epc ctable concurrent helm-pydoc helm-cscope xcscope dap-mode posframe lsp-treemacs bui lsp-mode dash-functional cython-mode counsel-gtags counsel swiper ivy company-anaconda blacken anaconda-mode pythonic cpp-auto-include yasnippet-snippets xterm-color ws-butler writeroom-mode winum which-key vterm volatile-highlights vi-tilde-fringe uuidgen use-package unfill undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org terminal-here symon symbol-overlay string-inflection spaceline-all-the-icons shell-pop restart-emacs rainbow-delimiters popwin pcre2el password-generator paradox overseer org-superstar open-junk-file nameless mwim multi-term move-text mmm-mode markdown-toc macrostep lorem-ipsum link-hint indent-guide hybrid-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-rtags helm-purpose helm-projectile helm-org helm-mode-manager helm-make helm-ls-git helm-gtags helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate google-c-style golden-ratio gh-md ggtags fuzzy font-lock+ flyspell-correct-helm flycheck-ycmd flycheck-rtags flycheck-pos-tip flycheck-package flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emr elisp-slime-nav editorconfig dumb-jump dotenv-mode disaster diminish devdocs define-word company-ycmd company-rtags company-c-headers column-enforce-mode clean-aindent-mode centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent ace-link ace-jump-helm-line ac-ispell))
+   '(send-mail-function 'mailclient-send-it)
    '(treemacs-use-follow-mode nil t))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
