@@ -618,6 +618,7 @@ before packages are loaded."
   (global-set-key [remap kill-ring-save] 'easy-kill)
   (global-set-key [remap mark-sexp] 'easy-mark)
   (global-set-key (kbd "C-'") 'easy-mark)
+  (global-set-key (kbd "C-\"") 'sp-kill-sexp)
   (spacemacs/set-leader-keys "d f" 'find-name-dired)
   (spacemacs/set-leader-keys "j m" 'evil-jump-item)
   (spacemacs/set-leader-keys "s e" 'iedit-mode)
@@ -662,9 +663,9 @@ before packages are loaded."
 ;; auto-generate custom variable definitions.
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
+  This is an auto-generated function, do not modify its content directly, use
+  Emacs customize menu instead.
+  This function is called at the very end of Spacemacs initialization."
   (custom-set-variables
    ;; custom-set-variables was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
