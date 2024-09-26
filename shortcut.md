@@ -180,16 +180,21 @@
 | C-S-backspace | 删除整行                                                          |
 | leader k d x  | 删除当前光标所在表达式，括号范围，进入evil-lisp-state状态         |
 | leader k D x  | 删除光标前一个位置所在的表达式，括号范围，进入evil-lisp-state状态 |
-| leader k esc  | 退出evil-lisp-state状态                                  |
+| leader k esc  | 退出evil-lisp-state状态                                           |
 | leader k w    | 在当前位置的表达式增加括号                                        |
 | leader k W    | 在当前位置的表达式删除括号                                        |
 | M-d           | 向后删除单词                                                      |
+| C-M-k         | 向前删除sexp, kill-sexp  Kill balanced expression forward         |
+| C-M-backspace | 向后删除sexp                                                      |
+| C-"           | 智能删除sexp，引号上带引号删除；引号内不带引号删除                |
+|               |                                                                   |
 
-| 选中  | 描述             |
-|:------|:-----------------|
-| C-x h | 全选             |
-| C-M-h | 选中整个函数代码 |
-| M-h   | 选中段           |
+| 选中    | 描述             |
+|:--------|:-----------------|
+| C-x h   | 全选             |
+| C-M-h   | 选中整个函数代码 |
+| M-h     | 选中段           |
+| C-M-spc | 选中配对符号之间的段，包含配对符号                 |
 
 | 移动         | 描述                                                                         |
 |:-------------|:-----------------------------------------------------------------------------|
@@ -197,7 +202,10 @@
 | M->          | 跳到底部                                                                     |
 | M-{          | 跳到段顶部                                                                   |
 | M-}          | 跳到段底部                                                                   |
-| C-M-f        | 向前跳转一个语法单位，可类推其他移动                                         |
+| C-M-f        | forward-sexp Move forward over a balanced expression                         |
+| C-M-b        | backward-sexp  Move backward over a balanced expression                      |
+| C-M-n        | forward-list  Move forward over a parenthetical group                        |
+| C-M-p        | backward-list  Move backward over a parenthetical group                      |
 | leader x K/J | 上/下移动行                                                                  |
 | leader N k/j | 上/下滚动视图行                                                              |
 | C-M-a        | 跳到函数开头                                                                 |
@@ -207,7 +215,8 @@
 | leader-N     | 滚动导航状态                                                                 |
 | M-a          | 移动到c语句首                                                                |
 | M-e          | 移动到c语句尾                                                                |
-| M-q          | 自动选中                                                                             |
+| M-q          | 自动选中                                                                     |
+| <f5>         | 在匹配的括号间跳转                                                                             |
 
 | 复制         | 描述                     |
 |:-------------|:-------------------------|
