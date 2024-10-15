@@ -107,13 +107,15 @@
 | <         | 移动到上一个目录                   |
 | C-x C-d   | 列出目录的文件清单                                   |
     
-| treemacs                 | 描述                          |
-|:-------------------------|:------------------------------|
-| ?/advanced-helpful-hydra | 按键提示                      |
-| P                        | peek,只看不切光标             |
-| o h/o l/o a a            | 在其他窗口打开文件            |
-| M-N/M-P                  | 配合peek,移动peek打开的buffer |
-|                          |                               |
+| treemacs                 | 描述                                             |
+|:-------------------------|:-------------------------------------------------|
+| ?/advanced-helpful-hydra | 按键提示                                         |
+| P                        | peek,只看不切光标                                |
+| o h/o l/o a a            | 在其他窗口打开文件                               |
+| M-N/M-P                  | 配合peek,移动peek打开的buffer                    |
+| :                        | 批量操作文件                                     |
+| M                        | 标记/取消标记文件（标记后可以用:批量操作标记文件 |
+| D                        | 批量删除文件                                     |
 
 | evil按键                   | 描述                                    |
 |:---------------------------|:----------------------------------------|
@@ -181,12 +183,11 @@
 | leader k d x  | 删除当前光标所在表达式，括号范围，进入evil-lisp-state状态         |
 | leader k D x  | 删除光标前一个位置所在的表达式，括号范围，进入evil-lisp-state状态 |
 | leader k esc  | 退出evil-lisp-state状态                                           |
-| leader k w    | 在当前位置的表达式增加括号                                        |
-| leader k W    | 在当前位置的表达式删除括号                                        |
+| leader k w/W  | 在当前位置的表达式增加/删除括号                                   |
 | M-d           | 向后删除单词                                                      |
 | C-M-k         | 向前删除sexp, kill-sexp  Kill balanced expression forward         |
 | C-M-backspace | 向后删除sexp                                                      |
-| C-"           | 智能删除sexp，引号上带引号删除；引号内不带引号删除                |
+| M-k           | 智能删除sexp，引号上带引号删除；引号内不带引号删除                |
 |               |                                                                   |
 
 | 选中    | 描述             |

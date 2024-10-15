@@ -638,6 +638,7 @@ before packages are loaded."
   (indent-guide-global-mode)
   (setq helm-move-to-line-cycle-in-source nil)
   (with-eval-after-load 'treemacs
+    (define-key treemacs-mode-map (kbd ":") 'treemacs-bulk-file-actions)
     (define-key treemacs-mode-map (kbd "M") 'lwg-treemacs-mark-unmark-path-easy)
     (define-key treemacs-mode-map (kbd "D") 'treemacs-delete-marked-paths))
   (with-eval-after-load 'lsp-mode
