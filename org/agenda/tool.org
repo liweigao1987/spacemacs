@@ -29,6 +29,9 @@ GXN1eh9FbDiX1ACdd7XKMV7hL7x0ClBJLUJ-zFfKofjaj2yxE53xauIfkqZ8FoLpcZ0Ux6McTyNmODDS
 1. elisp用户手册
    https://www.gnu.org/software/emacs/manual/html_node/eintr/index.html
    or C-h i m elisp在emacs内阅读
+2. undo-tree
+   1. 修复treemacs窗口突变问题
+      open undo-tree.el (in my case located at ~/.emacs.d/elpa/27.1/develop/undo-tree-0.8.2/undo-tree.el) and edit the line that says (balance-windows). Replace it with (balance-windows (window-parent win))
 
 * semgrep                                                      :tool:semgrep:
 1. token

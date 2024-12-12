@@ -250,6 +250,9 @@
 | org-agenda            | 搜索现有org文档 |
 | org-capture           | 记录org文档     |
 | M-x org-decrypt-entry | 解密当前org条目 |
+| C-enter               | 新增标题列表    |
+| M-enter               | 新增当前列表    |
+| enter                 | 正文                |
 
 | 窗口         | 描述              |
 |:-------------|:------------------|
