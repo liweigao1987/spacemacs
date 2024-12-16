@@ -156,7 +156,10 @@
 | M-a                                               | 标记所有条目                             |
 | M-i                                               | 多buffer搜索                             |
 | C-M-v/V/y                                         | minibuffer下滚动其他窗口                 |
-| C-h b                                             | key bindings                                         |
+| C-h b                                             | key bindings                             |
+| C-c C-e                                           | 进入edit模式                             |
+| edit模式下 C-c C-q C-k                            | 删除所有                                 |
+|                                                   |                                          |
 
 | lsp          | 描述                                             |
 |:-------------|:-------------------------------------------------|
