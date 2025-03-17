@@ -52,3 +52,10 @@ Note: You can always generate more tokens at https://semgrep.dev/orgs/-/settings
    unable to access 'https://github.com/melpa/melpa.git/': Received HTTP code 503 from proxy after CONNECT
    解决办法：git config --global --unset http.proxy
 
+* rust                                                            :tool:rust:
+1. rust安装
+   https://blog.csdn.net/qq_35241329/article/details/135527371
+   curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
+   . "$HOME/.cargo/env"
+
+
