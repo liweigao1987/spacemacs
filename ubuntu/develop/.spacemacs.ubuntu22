@@ -681,7 +681,11 @@ before packages are loaded."
                            :whitelist ["."]  ; 白名单：扫描项目根目录所有文件
                            :blacklist [build/])  ; 黑名单：无（可排除 build/ 等目录）
                  :compilationDatabaseDirectory "."))
-  (setq-default display-line-numbers t)
+  ;; (setq-default display-line-numbers t)
+  ;; (add-hook 'python-base-mode-hook
+  ;;           (lambda ()
+  ;;             (setq-local display-line-numbers t)
+  ;;             (display-line-numbers-mode t)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -760,8 +764,8 @@ This function is called at the very end of Spacemacs initialization."
                  lsp-treemacs lsp-ui lsp-ui-util macrostep markdown-toc minitest
                  mmm-mode move-text multi-term multiple-cursors mwim nameless
                  nodejs-repl npm-mode open-junk-file org-superstar overseer
-                 paradox password-generator pcre2el pip-requirements pipenv pippel
-                 popwin posframe powershell prettier-js pug-mode py-isort
+                 paradox password-generator pcre2el pet pip-requirements pipenv
+                 pippel popwin posframe powershell prettier-js pug-mode py-isort
                  pyenv-mode pytest pythonic pyvenv rainbow-delimiters rake rbenv
                  restart-emacs rg ripgrep robe ron-mode rspec-mode rubocop
                  rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode
@@ -773,8 +777,8 @@ This function is called at the very end of Spacemacs initialization."
                  treemacs-persp treemacs-projectile undo-tree unfill use-package
                  uuidgen vi-tilde-fringe volatile-highlights vterm web-beautify
                  web-completion-data web-mode which-key which-key-posframe winum
-                 writeroom-mode ws-butler xcscope xterm-color yaml-mode yapfify
-                 yasnippet-snippets))
+                 writeroom-mode ws-butler xcscope xterm-color yaml-imenu yaml-mode
+                 yaml-tomato yapfify yasnippet-snippets))
    '(treemacs-use-follow-mode nil t))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
