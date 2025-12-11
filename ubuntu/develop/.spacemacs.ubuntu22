@@ -681,6 +681,7 @@ before packages are loaded."
                            :whitelist ["."]  ; 白名单：扫描项目根目录所有文件
                            :blacklist [build/])  ; 黑名单：无（可排除 build/ 等目录）
                  :compilationDatabaseDirectory "."))
+  (setq-default display-line-numbers t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
