@@ -58,4 +58,6 @@ Note: You can always generate more tokens at https://semgrep.dev/orgs/-/settings
    curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
    . "$HOME/.cargo/env"
 
+* spacemacs                                                      :tool:emacs:
+1. .gitignore文件中忽略的文件或目录，不会被搜索。比如多仓库，如果忽略了别的仓库，将无法同时搜索忽略的仓库，此时就不能忽略这些目录
 

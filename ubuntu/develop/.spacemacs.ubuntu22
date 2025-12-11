@@ -32,7 +32,9 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(rust
+   '(d
+     rust
+     eglot
      html
      octave
      csv
@@ -59,7 +61,8 @@ This function should only modify configuration layer settings."
      (c-c++ :variables
             c-c++-enable-clang-support t
             ;;c-c++-lsp-enable-semantic-highlight 'rainbow
-            c-c++-backend 'lsp-clangd)
+            c-c++-adopt-subprojects t
+            c-c++-backend 'lsp-ccls)
      (groovy :variables
              groovy-backend 'company-groovy)
      ;;gtags
@@ -292,7 +295,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 10.0
+                               :size 8.0
                                :weight normal
                                :width normal)
 
@@ -493,7 +496,7 @@ It should only modify the values of Spacemacs settings."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.
    ;; (default '("rg" "ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("rg" "ag" "ack" "grep")
 
    ;; The backend used for undo/redo functionality. Possible values are
    ;; `undo-tree', `undo-fu' and `undo-redo', see also `evil-undo-system'.
@@ -617,7 +620,7 @@ before packages are loaded."
   (setq lsp-headerline-breadcrumb-enable-diagnostics nil)
   ;; (setq lsp-headerline-breadcrumb-icons-enable nil)
   ;; (setq lsp-headerline-arrow "/")
-  (setq lsp-java-server-install-dir "/home/liweigao/work/project/spacemacs/download/jdt-language-server/jdt-language-server-0.68.0-202101202016/")
+  (setq lsp-java-server-install-dir "/home/liweigao/big/work/project/spacemacs/download/jdt-language-server/jdt-language-server-0.68.0-202101202016/")
   (define-coding-system-alias 'UTF-8 'utf-8)
   (blink-cursor-mode)
   (browse-kill-ring-default-keybindings)
@@ -637,8 +640,8 @@ before packages are loaded."
   (spacemacs/set-leader-keys "j m" 'evil-jump-item)
   (spacemacs/set-leader-keys "s e" 'iedit-mode)
   (spacemacs/set-leader-keys "m g w" 'lsp-find-declaration)
-  (setq org-agenda-files '("/home/liweigao/work/project/spacemacs/org/agenda/"))
-  (setq org-default-notes-file "/home/liweigao/work/project/spacemacs/org/agenda/default.org")
+  (setq org-agenda-files '("/home/liweigao/big/work/project/spacemacs/org/agenda/"))
+  (setq org-default-notes-file "/home/liweigao/big/work/project/spacemacs/org/agenda/default.org")
   (setq org-crypt-tag-matcher "account")
   (setq org-tags-exclude-from-inheritance (quote ("account")))
   (setq org-crypt-key nil)
@@ -672,6 +675,12 @@ before packages are loaded."
   ;; (use-package ivy-rich
   ;;   :ensure t
   ;;   :init (ivy-rich-mode 1))
+  (setq lsp-ccls-initialization-options
+        '(:index (:threads 4
+                           :onChange t  ; 文件修改时自动重新索引
+                           :whitelist ["."]  ; 白名单：扫描项目根目录所有文件
+                           :blacklist [build/])  ; 黑名单：无（可排除 build/ 等目录）
+                 :compilationDatabaseDirectory "."))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -691,27 +700,30 @@ This function is called at the very end of Spacemacs initialization."
    '(lsp-enable-links nil)
    '(org-capture-templates
      '(("t" "Task" entry
-        (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/task.org")
+        (file+datetree
+         "/home/liweigao/big/work/project/spacemacs/org/agenda/task.org")
         "* TODO [P:%^{priority|5|0|1|2|3|4|5|6|7|8|9}] %^{title} %^g\12%?\12deadline: %^t"
         :empty-lines 1)
        ("w" "Weekly report" entry
         (file+weektree
-         "/home/liweigao/work/project/spacemacs/org/agenda/weekly.org")
+         "/home/liweigao/big/work/project/spacemacs/org/agenda/weekly.org")
         "* TODO  %<%Y>年%<%W>周  %t :weekly:\12- 鸿鹄二代语音方案：\12\11%?\12- 智慧公交大屏TTS：\12\12- android车联网TTS：\12\12- 手百TTS：\12\12- 百度地图TTS：\12\12- LINUX TTS：\12\12- 私有化TTS：\12\12- 跨平台TTS：\12\12- 度秘冬时闹钟：\12\12"
         :empty-lines 2)
        ("a" "Account" entry
-        (file "/home/liweigao/work/project/spacemacs/org/agenda/account.org")
+        (file "/home/liweigao/big/work/project/spacemacs/org/agenda/account.org")
         "* %U - %^{title} :account:\12 - account: %^{account}\12 - password: %^{password}"
         :empty-lines 1 :kill-buffer t)
        ("m" "Memory")
        ("mw" "Work" entry
-        (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/work.org")
+        (file+datetree
+         "/home/liweigao/big/work/project/spacemacs/org/agenda/work.org")
         "* %^{title} :work:%^g\12%?" :empty-lines 1)
        ("mt" "Tool" entry
-        (file "/home/liweigao/work/project/spacemacs/org/agenda/tool.org")
+        (file "/home/liweigao/big/work/project/spacemacs/org/agenda/tool.org")
         "* %^{title} :tool:%^g\12%?" :empty-lines 1)
        ("ml" "Life" entry
-        (file+datetree "/home/liweigao/work/project/spacemacs/org/agenda/life.org")
+        (file+datetree
+         "/home/liweigao/big/work/project/spacemacs/org/agenda/life.org")
         "* %^{title} :life:%^g\12%?" :empty-lines 1)))
    '(package-selected-packages
      '(ac-ispell ace-jump-helm-line ace-link add-node-modules-path aggressive-indent
@@ -720,22 +732,22 @@ This function is called at the very end of Spacemacs initialization."
                  blacken bmx-mode browse-kill-ring bui bundler
                  centered-cursor-mode chruby clean-aindent-mode
                  column-enforce-mode company-anaconda company-c-headers
-                 company-rtags company-web company-ycmd concurrent counsel
-                 counsel-css counsel-gtags cpp-auto-include csv-mode ctable
-                 cython-mode dap-mode dash-functional define-word devdocs diminish
-                 disaster doom-modeline dotenv-mode dumb-jump editorconfig
-                 elisp-slime-nav emmet-mode emr enh-ruby-mode epc esh-help
-                 eshell-prompt-extras eshell-z eval-sexp-fu evil-anzu evil-args
-                 evil-cleverparens evil-escape evil-exchange evil-goggles
-                 evil-iedit-state evil-indent-plus evil-lion evil-lisp-state
-                 evil-matchit evil-mc evil-nerd-commenter evil-numbers
-                 evil-surround evil-textobj-line evil-tutor evil-unimpaired
-                 evil-visual-mark-mode evil-visualstar expand-region eyebrowse
-                 fancy-battery flx-ido flycheck-elsa flycheck-package
-                 flycheck-pos-tip flycheck-rtags flycheck-ycmd
-                 flyspell-correct-helm font-lock+ fuzzy ggtags gh-md golden-ratio
-                 google-c-style google-translate grizzl haml-mode helm-ag
-                 helm-c-yasnippet helm-company helm-cscope helm-css-scss
+                 company-dcd company-rtags company-web company-ycmd concurrent
+                 consult-eglot counsel counsel-css counsel-gtags cpp-auto-include
+                 csv-mode ctable cython-mode d-mode dap-mode dash-functional
+                 define-word devdocs diminish disaster doom-modeline dotenv-mode
+                 dumb-jump editorconfig eglot elisp-slime-nav emmet-mode emr
+                 enh-ruby-mode epc esh-help eshell-prompt-extras eshell-z
+                 eval-sexp-fu evil-anzu evil-args evil-cleverparens evil-escape
+                 evil-exchange evil-goggles evil-iedit-state evil-indent-plus
+                 evil-lion evil-lisp-state evil-matchit evil-mc
+                 evil-nerd-commenter evil-numbers evil-surround evil-textobj-line
+                 evil-tutor evil-unimpaired evil-visual-mark-mode evil-visualstar
+                 expand-region eyebrowse fancy-battery flx-ido flycheck-dmd-dub
+                 flycheck-elsa flycheck-package flycheck-pos-tip flycheck-rtags
+                 flycheck-ycmd flyspell-correct-helm font-lock+ fuzzy ggtags gh-md
+                 golden-ratio google-c-style google-translate grizzl haml-mode
+                 helm-ag helm-c-yasnippet helm-company helm-cscope helm-css-scss
                  helm-descbinds helm-flx helm-gtags helm-ls-git helm-make
                  helm-mode-manager helm-org helm-projectile helm-purpose
                  helm-pydoc helm-rtags helm-swoop helm-themes helm-xref
@@ -750,10 +762,10 @@ This function is called at the very end of Spacemacs initialization."
                  paradox password-generator pcre2el pip-requirements pipenv pippel
                  popwin posframe powershell prettier-js pug-mode py-isort
                  pyenv-mode pytest pythonic pyvenv rainbow-delimiters rake rbenv
-                 restart-emacs robe ron-mode rspec-mode rubocop rubocopfmt
-                 ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools
-                 rust-mode rvm sass-mode scss-mode seeing-is-believing shell-pop
-                 shrink-path simple-httpd skewer-mode slim-mode
+                 restart-emacs rg ripgrep robe ron-mode rspec-mode rubocop
+                 rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode
+                 ruby-tools rust-mode rvm sass-mode scss-mode seeing-is-believing
+                 shell-pop shrink-path simple-httpd skewer-mode slim-mode
                  spaceline-all-the-icons sphinx-doc stickyfunc-enhance
                  string-inflection swiper symbol-overlay symon tagedit
                  terminal-here tern toc-org treemacs-evil treemacs-icons-dired
