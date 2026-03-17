@@ -62,7 +62,7 @@ This function should only modify configuration layer settings."
             c-c++-enable-clang-support t
             ;;c-c++-lsp-enable-semantic-highlight 'rainbow
             c-c++-adopt-subprojects t
-            c-c++-backend 'lsp-ccls)
+            c-c++-backend 'lsp-clangd)
      (groovy :variables
              groovy-backend 'company-groovy)
      ;;gtags
@@ -679,12 +679,12 @@ before packages are loaded."
   ;; (use-package ivy-rich
   ;;   :ensure t
   ;;   :init (ivy-rich-mode 1))
-  (setq lsp-ccls-initialization-options
-        '(:index (:threads 4
-                           :onChange t  ; 文件修改时自动重新索引
-                           :whitelist ["."]  ; 白名单：扫描项目根目录所有文件
-                           :blacklist [build/])  ; 黑名单：无（可排除 build/ 等目录）
-                 :compilationDatabaseDirectory "."))
+  ;; (setq lsp-ccls-initialization-options
+  ;;       '(:index (:threads 4
+  ;;                          :onChange t  ; 文件修改时自动重新索引
+  ;;                          :whitelist ["."]  ; 白名单：扫描项目根目录所有文件
+  ;;                          :blacklist [build/])  ; 黑名单：无（可排除 build/ 等目录）
+  ;;                :compilationDatabaseDirectory "."))
   ;; (setq-default display-line-numbers t)
   ;; (add-hook 'python-base-mode-hook
   ;;           (lambda ()
@@ -783,6 +783,10 @@ This function is called at the very end of Spacemacs initialization."
                web-completion-data web-mode which-key which-key-posframe winum
                writeroom-mode ws-butler xcscope xterm-color yaml-imenu yaml-mode
                yaml-tomato yapfify yasnippet-snippets))
+ '(projectile-globally-ignored-directories
+   '(".idea" ".vscode" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_"
+     ".bzr" "_darcs" ".pijul" ".tox" ".svn" ".stack-work" ".ccls-cache" ".cache"
+     ".clangd" ".sl" ".jj" ".repo"))
  '(treemacs-use-follow-mode nil t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
