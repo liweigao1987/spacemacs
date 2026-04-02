@@ -3,6 +3,7 @@
 在CMakeLists.txt中添加 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 在命令行中添加-DCMAKE_EXPORT_COMPILE_COMMANDS=on
 iar工具生成compile_commands.json: iarbuild.exe tumia.ewp -jsondb Debug -output compile_commands.json
+makefile使用bear生成： bear -- 命令  例如：bear -- make all,一定要clean工程从头编译才是完整的包含所有源文件，否则可能不全
 
 * git                                                              :tool:git:
 1. 解决二进制文件合并冲突问题
