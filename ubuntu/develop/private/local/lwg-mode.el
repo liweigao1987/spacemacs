@@ -61,9 +61,12 @@
             (define-key map (kbd "<f8>") 'print-lwg)
             (define-key map (kbd "<f9>") 'ff-find-other-file)
             (define-key map (kbd "M-n") 'mark-ring-forward)
+            (define-key map (kbd "M-p") 'pop-to-mark-command)
             ;; 清除 M-N → M-n 的自动翻译规则
-            (define-key key-translation-map (kbd "M-N") nil)
-            (define-key map (kbd "M-N") 'global-mark-ring-forward)
+            ;; (define-key key-translation-map (kbd "M-N") nil)
+            ;; (define-key map (kbd "M-N") 'global-mark-ring-forward)
+            ;; (define-key key-translation-map (kbd "M-P") nil)
+            ;; (define-key map (kbd "M-P") 'pop-global-mark)
             map))
 
 (add-hook 'c-mode-hook 'lwg-mode)
