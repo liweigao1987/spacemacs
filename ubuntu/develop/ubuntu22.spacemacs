@@ -626,7 +626,7 @@ before packages are loaded."
   (browse-kill-ring-default-keybindings)
   (require 'android-mode)
   (setq android-mode-sdk-dir "/home/liweigao/Android/Sdk/")
-  ;; (global-set-key (kbd "<backtab>") 'evil-shift-left)
+  (global-set-key (kbd "<backtab>") 'evil-shift-left)
   ;; (global-set-key (kbd "M-n") 'evil-jump-forward)
   ;; (global-set-key (kbd "M-p") 'evil-jump-backward)
   ;; (global-set-key (kbd "M-q") 'mark-sexp)
