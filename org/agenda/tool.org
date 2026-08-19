@@ -69,5 +69,7 @@ Note: You can always generate more tokens at https://semgrep.dev/orgs/-/settings
    #define lwg_STR(x) _lwg_STR(x)
    #pragma message("---------->test=" lwg_STR(test))
    ------------------------------------stop-compile-here------------------------------------
+   _Static_assert(sizeof(char) == 1, "char 1"); //编译时判断条件
+
 
 
