@@ -1,3 +1,4 @@
+;;; lwg-mode.el --- my custom tools -*- lexical-binding: t; -*-
 (make-variable-buffer-local
  (defvar lwg-print-count 0
    "print counts"))

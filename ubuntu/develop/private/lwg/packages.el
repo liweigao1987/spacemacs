@@ -1,4 +1,4 @@
-;;; packages.el --- lwg layer packages file for Spacemacs.
+;;; packages.el --- lwg layer packages file for Spacemacs -*- lexical-binding: t; -*-
 ;;
 ;; Copyright (c) 2012-2020 Sylvain Benner & Contributors
 ;;

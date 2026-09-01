@@ -38,7 +38,7 @@ This function should only modify configuration layer settings."
      html
      octave
      csv
-     ruby
+     ;;ruby
      web-beautify
      (javascript :variables
                  javascript-backend 'tern
@@ -106,7 +106,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(easy-kill browse-kill-ring android-mode android-env counsel all-the-icons-ibuffer all-the-icons-ivy-rich ivy-rich
+   dotspacemacs-additional-packages '(easy-kill browse-kill-ring counsel all-the-icons-ibuffer all-the-icons-ivy-rich ivy-rich
                                                 ;; evil-ediff was removed from elpa, but is still referenced in spacemacs-edit layer...
                                                 (evil-ediff :location (recipe :fetcher github :repo "emacs-evil/evil-ediff")))
 
@@ -114,7 +114,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(evil-collection eat)
+   dotspacemacs-excluded-packages '(evil-collection eat code-review)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -595,6 +595,10 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
           ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
           ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
+  ;; 屏蔽 lexical-binding 类编译警告，保留其他有用的代码警告
+  (setq-default byte-compile-warnings
+                '(cl-functions unresolved callargs redefine obsolete
+                               noruntime interactive-only runtime))
   )
 
 (defun dotspacemacs/user-load ()
@@ -624,8 +628,8 @@ before packages are loaded."
   (define-coding-system-alias 'UTF-8 'utf-8)
   (blink-cursor-mode)
   (browse-kill-ring-default-keybindings)
-  (require 'android-mode)
-  (setq android-mode-sdk-dir "/home/liweigao/Android/Sdk/")
+  ;; (require 'android-mode)
+  ;; (setq android-mode-sdk-dir "/home/liweigao/Android/Sdk/")
   (global-set-key (kbd "<backtab>") 'evil-shift-left)
   ;; (global-set-key (kbd "M-n") 'evil-jump-forward)
   ;; (global-set-key (kbd "M-p") 'evil-jump-backward)
@@ -690,6 +694,24 @@ before packages are loaded."
   ;;           (lambda ()
   ;;             (setq-local display-line-numbers t)
   ;;             (display-line-numbers-mode t)))
+  
+  ;; ====== 修复 Spacemacs 更新后的警告 ======
+  ;; 完全禁用 lexical-binding 检查
+  (setq lexical-binding-file-local-variables-skip t)
+  
+  ;; 更彻底的警告屏蔽
+  (setq warning-suppress-types '((files lexical-binding)))
+  
+  ;; 禁用所有文件相关的编译警告
+  (setq byte-compile-warnings
+        '(not lexical-binding not obsolete not unresolved not cl-functions 
+          not callargs not redefine not noruntime not interactive-only))
+  
+  ;; 如果是 undo-fu-session 错误，确保包已安装或禁用相关配置
+  (unless (require 'undo-fu-session nil 'noerror)
+    (message "undo-fu-session not available, skipping undo-fu-session-global-mode"))
+  ;; ==========================================
+  
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
