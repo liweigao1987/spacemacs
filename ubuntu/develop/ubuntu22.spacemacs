@@ -597,7 +597,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
           ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
   ;; 屏蔽 lexical-binding 类编译警告，保留其他有用的代码警告
   (setq-default byte-compile-warnings
-                '(cl-functions unresolved callargs redefine obsolete
+                '(cl-functions unresolved callargs redefine
                                noruntime interactive-only runtime))
   )
 
