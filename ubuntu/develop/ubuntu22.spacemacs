@@ -166,7 +166,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    ;; (default 5)
-   dotspacemacs-elpa-timeout 5
+   dotspacemacs-elpa-timeout 60
 
    ;; Set `gc-cons-threshold' and `gc-cons-percentage' when startup finishes.
    ;; This is an advanced option and should not be changed unless you suspect
@@ -694,24 +694,24 @@ before packages are loaded."
   ;;           (lambda ()
   ;;             (setq-local display-line-numbers t)
   ;;             (display-line-numbers-mode t)))
-  
+
   ;; ====== 修复 Spacemacs 更新后的警告 ======
   ;; 完全禁用 lexical-binding 检查
   (setq lexical-binding-file-local-variables-skip t)
-  
+
   ;; 更彻底的警告屏蔽
   (setq warning-suppress-types '((files lexical-binding)))
-  
+
   ;; 禁用所有文件相关的编译警告
   (setq byte-compile-warnings
-        '(not lexical-binding not obsolete not unresolved not cl-functions 
-          not callargs not redefine not noruntime not interactive-only))
-  
+        '(not lexical-binding not obsolete not unresolved not cl-functions
+              not callargs not redefine not noruntime not interactive-only))
+
   ;; 如果是 undo-fu-session 错误，确保包已安装或禁用相关配置
   (unless (require 'undo-fu-session nil 'noerror)
     (message "undo-fu-session not available, skipping undo-fu-session-global-mode"))
   ;; ==========================================
-  
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -721,111 +721,384 @@ before packages are loaded."
 This is an auto-generated function, do not modify its content directly, use
 Emacs customize menu instead.
 This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(evil-want-Y-yank-to-eol nil)
- '(flycheck-checker-error-threshold nil)
- '(lsp-enable-links nil)
- '(org-capture-templates
-   '(("t" "Task" entry
-      (file+datetree
-       "/home/liweigao/big/work/project/spacemacs/org/agenda/task.org")
-      "* TODO [P:%^{priority|5|0|1|2|3|4|5|6|7|8|9}] %^{title} %^g\12%?\12deadline: %^t"
-      :empty-lines 1)
-     ("w" "Weekly report" entry
-      (file+weektree
-       "/home/liweigao/big/work/project/spacemacs/org/agenda/weekly.org")
-      "* TODO  %<%Y>年%<%W>周  %t :weekly:\12- 鸿鹄二代语音方案：\12\11%?\12- 智慧公交大屏TTS：\12\12- android车联网TTS：\12\12- 手百TTS：\12\12- 百度地图TTS：\12\12- LINUX TTS：\12\12- 私有化TTS：\12\12- 跨平台TTS：\12\12- 度秘冬时闹钟：\12\12"
-      :empty-lines 2)
-     ("a" "Account" entry
-      (file "/home/liweigao/big/work/project/spacemacs/org/agenda/account.org")
-      "* %U - %^{title} :account:\12 - account: %^{account}\12 - password: %^{password}"
-      :empty-lines 1 :kill-buffer t)
-     ("m" "Memory")
-     ("mw" "Work" entry
-      (file+datetree
-       "/home/liweigao/big/work/project/spacemacs/org/agenda/work.org")
-      "* %^{title} :work:%^g\12%?" :empty-lines 1)
-     ("mt" "Tool" entry
-      (file "/home/liweigao/big/work/project/spacemacs/org/agenda/tool.org")
-      "* %^{title} :tool:%^g\12%?" :empty-lines 1)
-     ("ml" "Life" entry
-      (file+datetree
-       "/home/liweigao/big/work/project/spacemacs/org/agenda/life.org")
-      "* %^{title} :life:%^g\12%?" :empty-lines 1)))
- '(package-selected-packages
-   '(ac-ispell ace-jump-helm-line ace-link add-node-modules-path aggressive-indent
-               all-the-icons-ibuffer all-the-icons-ivy-rich anaconda-mode
-               auto-compile auto-dictionary auto-highlight-symbol auto-yasnippet
-               blacken bmx-mode browse-kill-ring bui bundler
-               centered-cursor-mode chruby clean-aindent-mode
-               column-enforce-mode company-anaconda company-c-headers
-               company-dcd company-rtags company-web company-ycmd concurrent
-               consult-eglot counsel counsel-css counsel-gtags cpp-auto-include
-               csv-mode ctable cython-mode d-mode dap-mode dash-functional
-               define-word devdocs diminish disaster doom-modeline dotenv-mode
-               dumb-jump editorconfig eglot elisp-format elisp-slime-nav
-               emmet-mode emr enh-ruby-mode epc esh-help eshell-prompt-extras
-               eshell-z eval-sexp-fu evil-anzu evil-args evil-cleverparens
-               evil-escape evil-exchange evil-goggles evil-iedit-state
-               evil-indent-plus evil-lion evil-lisp-state evil-matchit evil-mc
-               evil-nerd-commenter evil-numbers evil-surround evil-textobj-line
-               evil-tutor evil-unimpaired evil-visual-mark-mode evil-visualstar
-               expand-region eyebrowse fancy-battery flx-ido flycheck-dmd-dub
-               flycheck-elsa flycheck-package flycheck-pos-tip flycheck-rtags
-               flycheck-ycmd flyspell-correct-helm font-lock+ fuzzy ggtags gh-md
-               golden-ratio google-c-style google-translate grizzl haml-mode
-               helm-ag helm-c-yasnippet helm-company helm-cscope helm-css-scss
-               helm-descbinds helm-flx helm-gtags helm-ls-git helm-make
-               helm-mode-manager helm-org helm-projectile helm-purpose
-               helm-pydoc helm-rtags helm-swoop helm-themes helm-xref
-               highlight-indentation highlight-numbers highlight-parentheses
-               hl-todo htmlize hungry-delete hybrid-mode impatient-mode
-               import-js importmagic indent-guide inf-ruby ivy js-doc js2-mode
-               js2-refactor link-hint live-py-mode livid-mode lorem-ipsum
-               lsp-javacomp lsp-julia lsp-mode lsp-pyright lsp-python-ms
-               lsp-treemacs lsp-ui lsp-ui-util macrostep markdown-toc minitest
-               mmm-mode move-text multi-term multiple-cursors mwim nameless
-               nodejs-repl npm-mode open-junk-file org-superstar overseer
-               paradox password-generator pcre2el pet pip-requirements pipenv
-               pippel popwin posframe powershell prettier-js pug-mode py-isort
-               pyenv-mode pytest pythonic pyvenv rainbow-delimiters rake rbenv
-               restart-emacs rg ripgrep robe ron-mode rspec-mode rubocop
-               rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode
-               ruby-tools rust-mode rvm sass-mode scss-mode seeing-is-believing
-               shell-pop shrink-path simple-httpd skewer-mode slim-mode
-               spaceline-all-the-icons sphinx-doc stickyfunc-enhance
-               string-inflection swiper symbol-overlay symon tagedit
-               terminal-here tern toc-org treemacs-evil treemacs-icons-dired
-               treemacs-persp treemacs-projectile undo-tree unfill use-package
-               uuidgen vi-tilde-fringe volatile-highlights vterm web-beautify
-               web-completion-data web-mode which-key which-key-posframe winum
-               writeroom-mode ws-butler xcscope xterm-color yaml-imenu yaml-mode
-               yaml-tomato yapfify yasnippet-snippets))
- '(projectile-globally-ignored-directories
-   '(".idea" ".vscode" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_"
-     ".bzr" "_darcs" ".pijul" ".tox" ".svn" ".stack-work" ".ccls-cache" ".cache"
-     ".clangd" ".sl" ".jj" ".repo" ".kiro"))
- '(projectile-globally-ignored-file-suffixes '(".i" ".d" ".s" ".su" ".o"))
- '(helm-grep-ignored-files
-   '(".#*" "*.o" "*~" "*.bin" "*.lbin" "*.so" "*.a" "*.ln" "*.blg" "*.bbl" "*.elc"
-     "*.lof" "*.glo" "*.idx" "*.lot" "*.fmt" "*.tfm" "*.class" "*.fas" 
-     "*.mem" "*.x86f" "*.sparcf" "*.dfsl" "*.pfsl" "*.d64fsl" "*.p64fsl"
-     "*.lx64fsl" "*.lx32fsl" "*.dx64fsl" "*.dx32fsl" "*.fx64fsl" "*.fx32fsl"
-     "*.sx64fsl" "*.sx32fsl" "*.wx64fsl" "*.wx32fsl" "*.fasl" "*.ufsl" "*.fsl"
-     "*.dxl" "*.lo" "*.la" "*.gmo" "*.mo" "*.toc" "*.aux" "*.cp" "*.fn" "*.ky"
-     "*.pg" "*.tp" "*.vr" "*.cps" "*.fns" "*.kys" "*.pgs" "*.tps" "*.vrs"
-     "*.pyc" "*.pyo" "*.d" "*.i" "*.s" "*.su" "*.o"))
- '(projectile-indexing-method 'hybrid)
- '(treemacs-use-follow-mode nil t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(highlight-parentheses-highlight ((nil (:weight ultra-bold))) t)
- '(line-number-current-line ((t (:inherit line-number :background "#212026" :foreground "lawn green")))))
-)
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(evil-want-Y-yank-to-eol nil)
+   '(flycheck-checker-error-threshold nil)
+   '(helm-grep-ignored-files
+     '(".#*"
+       "*.o"
+       "*~"
+       "*.bin"
+       "*.lbin"
+       "*.so"
+       "*.a"
+       "*.ln"
+       "*.blg"
+       "*.bbl"
+       "*.elc"
+       "*.lof"
+       "*.glo"
+       "*.idx"
+       "*.lot"
+       "*.fmt"
+       "*.tfm"
+       "*.class"
+       "*.fas"
+       "*.mem"
+       "*.x86f"
+       "*.sparcf"
+       "*.dfsl"
+       "*.pfsl"
+       "*.d64fsl"
+       "*.p64fsl"
+       "*.lx64fsl"
+       "*.lx32fsl"
+       "*.dx64fsl"
+       "*.dx32fsl"
+       "*.fx64fsl"
+       "*.fx32fsl"
+       "*.sx64fsl"
+       "*.sx32fsl"
+       "*.wx64fsl"
+       "*.wx32fsl"
+       "*.fasl"
+       "*.ufsl"
+       "*.fsl"
+       "*.dxl"
+       "*.lo"
+       "*.la"
+       "*.gmo"
+       "*.mo"
+       "*.toc"
+       "*.aux"
+       "*.cp"
+       "*.fn"
+       "*.ky"
+       "*.pg"
+       "*.tp"
+       "*.vr"
+       "*.cps"
+       "*.fns"
+       "*.kys"
+       "*.pgs"
+       "*.tps"
+       "*.vrs"
+       "*.pyc"
+       "*.pyo"
+       "*.d"
+       "*.i"
+       "*.s"
+       "*.su"
+       "*.o"))
+   '(lsp-enable-links nil)
+   '(org-capture-templates
+     '(("t" "Task" entry
+        (file+datetree
+         "/home/liweigao/big/work/project/spacemacs/org/agenda/task.org")
+        "* TODO [P:%^{priority|5|0|1|2|3|4|5|6|7|8|9}] %^{title} %^g\12%?\12deadline: %^t"
+        :empty-lines 1)
+       ("w" "Weekly report" entry
+        (file+weektree
+         "/home/liweigao/big/work/project/spacemacs/org/agenda/weekly.org")
+        "* TODO  %<%Y>年%<%W>周  %t :weekly:\12- 鸿鹄二代语音方案：\12\11%?\12- 智慧公交大屏TTS：\12\12- android车联网TTS：\12\12- 手百TTS：\12\12- 百度地图TTS：\12\12- LINUX TTS：\12\12- 私有化TTS：\12\12- 跨平台TTS：\12\12- 度秘冬时闹钟：\12\12"
+        :empty-lines 2)
+       ("a"
+        "Account"
+        entry
+        (file "/home/liweigao/big/work/project/spacemacs/org/agenda/account.org")
+        "* %U - %^{title} :account:\12 - account: %^{account}\12 - password: %^{password}"
+        :empty-lines 1
+        :kill-buffer t)
+       ("m" "Memory")
+       ("mw" "Work" entry
+        (file+datetree
+         "/home/liweigao/big/work/project/spacemacs/org/agenda/work.org")
+        "* %^{title} :work:%^g\12%?"
+        :empty-lines 1)
+       ("mt"
+        "Tool"
+        entry
+        (file "/home/liweigao/big/work/project/spacemacs/org/agenda/tool.org")
+        "* %^{title} :tool:%^g\12%?"
+        :empty-lines 1)
+       ("ml" "Life" entry
+        (file+datetree
+         "/home/liweigao/big/work/project/spacemacs/org/agenda/life.org")
+        "* %^{title} :life:%^g\12%?"
+        :empty-lines 1)))
+   '(package-selected-packages
+     '(ac-ispell
+       ace-jump-helm-line
+       ace-link
+       add-node-modules-path
+       aggressive-indent
+       all-the-icons-ibuffer
+       all-the-icons-ivy-rich
+       anaconda-mode
+       auto-compile
+       auto-dictionary
+       auto-highlight-symbol
+       auto-yasnippet
+       blacken
+       bmx-mode
+       browse-kill-ring
+       bui
+       bundler
+       centered-cursor-mode
+       chruby
+       clean-aindent-mode
+       column-enforce-mode
+       company-anaconda
+       company-c-headers
+       company-dcd
+       company-rtags
+       company-web
+       company-ycmd
+       concurrent
+       consult-eglot
+       counsel
+       counsel-css
+       counsel-gtags
+       cpp-auto-include
+       csv-mode
+       ctable
+       cython-mode
+       d-mode
+       dap-mode
+       dash-functional
+       define-word
+       devdocs
+       disaster
+       doom-modeline
+       dotenv-mode
+       dumb-jump
+       editorconfig
+       eglot
+       elisp-format
+       elisp-slime-nav
+       emmet-mode
+       emr
+       enh-ruby-mode
+       epc
+       esh-help
+       eshell-prompt-extras
+       eshell-z
+       eval-sexp-fu
+       evil-anzu
+       evil-args
+       evil-cleverparens
+       evil-escape
+       evil-exchange
+       evil-goggles
+       evil-iedit-state
+       evil-indent-plus
+       evil-lion
+       evil-lisp-state
+       evil-matchit
+       evil-mc
+       evil-nerd-commenter
+       evil-numbers
+       evil-surround
+       evil-textobj-line
+       evil-tutor
+       evil-unimpaired
+       evil-visual-mark-mode
+       evil-visualstar
+       expand-region
+       eyebrowse
+       fancy-battery
+       flx-ido
+       flycheck-dmd-dub
+       flycheck-elsa
+       flycheck-package
+       flycheck-pos-tip
+       flycheck-rtags
+       flycheck-ycmd
+       flyspell-correct-helm
+       font-lock+
+       fuzzy
+       ggtags
+       gh-md
+       golden-ratio
+       google-c-style
+       google-translate
+       grizzl
+       haml-mode
+       helm-ag
+       helm-c-yasnippet
+       helm-company
+       helm-cscope
+       helm-css-scss
+       helm-descbinds
+       helm-flx
+       helm-gtags
+       helm-ls-git
+       helm-make
+       helm-mode-manager
+       helm-org
+       helm-projectile
+       helm-purpose
+       helm-pydoc
+       helm-rtags
+       helm-swoop
+       helm-themes
+       helm-xref
+       highlight-indentation
+       highlight-numbers
+       highlight-parentheses
+       hl-todo
+       htmlize
+       hungry-delete
+       hybrid-mode
+       impatient-mode
+       import-js
+       importmagic
+       indent-guide
+       inf-ruby
+       ivy
+       js-doc
+       js2-mode
+       js2-refactor
+       link-hint
+       live-py-mode
+       livid-mode
+       lorem-ipsum
+       lsp-javacomp
+       lsp-julia
+       lsp-mode
+       lsp-pyright
+       lsp-python-ms
+       lsp-treemacs
+       lsp-ui
+       lsp-ui-util
+       macrostep
+       markdown-toc
+       minitest
+       mmm-mode
+       move-text
+       multi-term
+       multiple-cursors
+       mwim
+       nameless
+       nodejs-repl
+       npm-mode
+       open-junk-file
+       org-superstar
+       overseer
+       paradox
+       password-generator
+       pcre2el
+       pet
+       pip-requirements
+       pipenv
+       pippel
+       popwin
+       posframe
+       powershell
+       prettier-js
+       pug-mode
+       py-isort
+       pyenv-mode
+       pytest
+       pythonic
+       pyvenv
+       rainbow-delimiters
+       rake
+       rbenv
+       restart-emacs
+       rg
+       ripgrep
+       robe
+       ron-mode
+       rspec-mode
+       rubocop
+       rubocopfmt
+       ruby-hash-syntax
+       ruby-refactor
+       ruby-test-mode
+       ruby-tools
+       rust-mode
+       rvm
+       sass-mode
+       scss-mode
+       seeing-is-believing
+       shell-pop
+       shrink-path
+       simple-httpd
+       skewer-mode
+       slim-mode
+       spaceline-all-the-icons
+       sphinx-doc
+       stickyfunc-enhance
+       string-inflection
+       swiper
+       symbol-overlay
+       symon
+       tagedit
+       terminal-here
+       tern
+       toc-org
+       treemacs-evil
+       treemacs-icons-dired
+       treemacs-persp
+       treemacs-projectile
+       undo-tree
+       unfill
+       use-package
+       uuidgen
+       vi-tilde-fringe
+       volatile-highlights
+       vterm
+       web-beautify
+       web-completion-data
+       web-mode
+       which-key
+       which-key-posframe
+       winum
+       writeroom-mode
+       ws-butler
+       xcscope
+       xterm-color
+       yaml-imenu
+       yaml-mode
+       yaml-tomato
+       yapfify
+       yasnippet-snippets))
+   '(projectile-globally-ignored-directories
+     '(".idea"
+       ".vscode"
+       ".ensime_cache"
+       ".eunit"
+       ".git"
+       ".hg"
+       ".fslckout"
+       "_FOSSIL_"
+       ".bzr"
+       "_darcs"
+       ".pijul"
+       ".tox"
+       ".svn"
+       ".stack-work"
+       ".ccls-cache"
+       ".cache"
+       ".clangd"
+       ".sl"
+       ".jj"
+       ".repo"
+       ".kiro"))
+   '(projectile-globally-ignored-file-suffixes '(".i" ".d" ".s" ".su" ".o"))
+   '(projectile-indexing-method 'hybrid)
+   '(treemacs-use-follow-mode nil t))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(highlight-parentheses-highlight ((nil (:weight ultra-bold))))
+   '(line-number-current-line
+     ((t (:inherit line-number :background "#212026" :foreground "lawn green")))))
+  )
