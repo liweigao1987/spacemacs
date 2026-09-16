@@ -247,7 +247,7 @@ It should only modify the values of Spacemacs settings."
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 10.0
+                               :size 11.0
                                :weight normal
                                :width normal)
 
@@ -476,7 +476,7 @@ It should only modify the values of Spacemacs settings."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.
    ;; (default '("rg" "ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("rg" "ag" "ack" "grep")
 
    ;; The backend used for undo/redo functionality. Possible values are
    ;; `undo-fu', `undo-redo' and `undo-tree' see also `evil-undo-system'.
@@ -576,19 +576,19 @@ It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
   (setq package-check-signature nil)
-  (setq configuration-layer-elpa-archives
-        '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
-          ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
-          ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
+  ;; (setq configuration-layer-elpa-archives
+  ;;       '(("melpa-cn" . "http://mirrors.cloud.tencent.com/elpa/melpa/")
+  ;;         ("org-cn"   . "http://mirrors.cloud.tencent.com/elpa/org/")
+  ;;         ("gnu-cn"   . "http://mirrors.cloud.tencent.com/elpa/gnu/")))
   ;; 保持向后兼容的别名设置
-  (define-obsolete-function-alias
-    'undo-fu-session-global-mode
-    'global-undo-fu-session-mode
-    "2025-07-30")
-  (define-obsolete-variable-alias
-    'undo-fu-session-global-mode
-    'global-undo-fu-session-mode
-    "2025-07-30")
+  ;; (define-obsolete-function-alias
+  ;;   'undo-fu-session-global-mode
+  ;;   'global-undo-fu-session-mode
+  ;;   "2025-07-30")
+  ;; (define-obsolete-variable-alias
+  ;;   'undo-fu-session-global-mode
+  ;;   'global-undo-fu-session-mode
+  ;;   "2025-07-30")
 
   )
 
@@ -689,7 +689,7 @@ This function is called at the very end of Spacemacs initialization."
                 define-word devdocs diminish dired-quick-sort disable-mouse
                 disaster dotenv-mode drag-stuff dumb-jump easy-kill edit-indirect
                 elisp-def elisp-demos elisp-slime-nav emr esh-help
-                eshell-prompt-extras eshell-z eval-sexp-fu evil-anzu evil-args
+                eshell-prompt-extras eshell-z eval-sexp-fu evil-args
                 evil-cleverparens evil-escape evil-evilified-state evil-exchange
                 evil-goggles evil-iedit-state evil-indent-plus evil-lion
                 evil-lisp-state evil-matchit evil-mc evil-nerd-commenter
